@@ -16,9 +16,9 @@
 			</ul>
 		</li>
 		<li><a href="about.html">About</a></li>
-		<li><a href="#">Pages</a>
+		<li><a href="#">Login</a>
 			<ul class="sub-menu">
-				<li><a href="404.html">404 page</a></li>
+				<li><a href="<?= base_url('pelanggan/register') ?>">Register</a></li>
 				<li><a href="about.html">About</a></li>
 				<li><a href="cart.html">Cart</a></li>
 				<li><a href="checkout.html">Check Out</a></li>
