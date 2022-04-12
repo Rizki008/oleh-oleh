@@ -50,9 +50,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-12">
-				<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights Reserved.<br>
-					Distributed By - <a href="https://themewagon.com/">Themewagon</a>
-				</p>
 			</div>
 			<div class="col-lg-6 text-right col-md-12">
 				<div class="social-icons">
@@ -91,6 +88,28 @@
 <!-- main js -->
 <script src="<?= base_url() ?>frontend/assets/js/main.js"></script>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#provinsi").on('change', (function() {
+			var id_provinsi = $(this).val();
+			$.ajax({
+				method: "POST",
+				url: "<?php echo base_url('Pelanggan/kabupaten') ?>",
+				data: 'id_provinsi=' + id_provinsi,
+				async: true,
+				type: 'get',
+				dataType: 'json',
+				success: function(data_kabupaten) {
+					console.log(data_kabupaten);
+					$('#kabupaten').append('<option>---Pilih Kabupaten---</option>')
+					for (var i = 0; i < data_kabupaten.length; i++) {
+						$('#kabupaten').append('<option value=' + data_kabupaten[i].id_kabupaten + '>' + data_kabupaten[i].kabupaten + '</option>');
+					}
+				}
+			});
+		}));
+	});
+</script>
 </body>
 
 </html>
