@@ -29,6 +29,21 @@
 <!-- Custom js for this page -->
 <script src="<?= base_url() ?>backend/assets/js/dashboard.js"></script>
 <!-- End custom js for this page -->
+<script>
+	function bacaGambar(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$('#gambar_load').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	$("#preview_gambar").change(function() {
+		bacaGambar(this);
+	});
+</script>
 </body>
 
 </html>
