@@ -13,14 +13,16 @@ class Pelanggan_login
 
 	public function login($username, $password)
 	{
-		$cek = $this->ci->m_auth->user_login($username, $password);
+		$cek = $this->ci->m_auth->pelanggan_login($username, $password);
 		if ($cek) {
-			$id_pelanggan = $cek->id_pelanggan();
-			$nama_pelanggan = $cek->nama_pelanggan();
-			$username = $cek->username();
-			$password = $cek->password();
-			$no_tlpn = $cek->no_tlpn();
+			$id_pelanggan = $cek->id_pelanggan;
+			$nama_pelanggan = $cek->nama_pelanggan;
+			$username = $cek->username;
+			$password = $cek->password;
+			$no_tlpn = $cek->no_tlpn;
 
+			$this->ci->session->set_userdata('id_pelanggan', $id_pelanggan);
+			$this->ci->session->set_userdata('nama_pelanggan', $nama_pelanggan);
 			$this->ci->session->set_userdata('username', $username);
 			$this->ci->session->set_userdata('password', $password);
 			$this->ci->session->set_userdata('no_tlpn', $no_tlpn);
@@ -28,7 +30,7 @@ class Pelanggan_login
 			redirect('home');
 		} else {
 			$this->ci->session->set_flashdata('pesan', 'Username atau Password salah');
-			redirect('auth/user_login');
+			redirect('pelanggan/login');
 		}
 	}
 
