@@ -68,6 +68,7 @@
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-warning" value="Submit">Register</button>
+						<a href="<?= base_url('pelanggan/login') ?>" class="tbn btn-primary">Login</a>
 					</div>
 					<?php echo form_close() ?>
 				</div>
