@@ -8,6 +8,11 @@
 
 <!-- menu start -->
 <nav class="main-menu">
+	<?php $keranjang = $this->cart->contents();
+	$jml_item = 0;
+	foreach ($keranjang as $key => $value) {
+		$jml_item = $jml_item + $value['qty'];
+	} ?>
 	<ul>
 		<li class="current-list-item"><a href="#">Home</a>
 			<ul class="sub-menu">
@@ -33,24 +38,35 @@
 				<li><a href="single-news.html">Single News</a></li>
 			</ul>
 		</li>
-		<li><a href="contact.html">Contact</a></li>
-		<li><a href="shop.html">Shop</a>
-			<ul class="sub-menu">
-				<li><a href="shop.html">Shop</a></li>
-				<li><a href="checkout.html">Check Out</a></li>
-				<li><a href="single-product.html">Single Product</a></li>
-				<li><a href="cart.html">Cart</a></li>
-			</ul>
+		<li><?php
+			if ($this->session->userdata('username') == "") { ?>
+				<a href="<?= base_url('pelanggan/register') ?>">Login</a>
+			<?php } else { ?>
+				<a href="#"><?= $this->session->userdata('nama_pelanggan'); ?></a>
+			<?php } ?>
+		</li>
+		<li>
+			<?php if ($this->session->userdata('username') == "") { ?>
+				<a href="#">Shop</a>
+			<?php } else { ?>
+				<a href="shop.html">Shop</a>
+				<ul class="sub-menu">
+					<li><a href="<?= base_url('pesanan') ?>">Cart</a></li>
+				</ul>
+			<?php } ?>
 		</li>
 		<li>
 			<div class="header-icons">
-				<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-				<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+				<a class="shopping-cart" href="<?= base_url('belanja') ?>"><i class="fas fa-shopping-cart"></i>[<?= $jml_item ?>]</a>
+				<?php if ($this->session->userdata('username') == "") { ?>
+					<a class="logout-bar-icon" href="#"><i class="fas fa-sign-out-alt"></i></a>
+				<?php } else { ?>
+					<a class="logout-bar-icon" href="<?= base_url('pelanggan/logout') ?>"><i class="fas fa-sign-out-alt"></i></a>
+				<?php } ?>
 			</div>
 		</li>
 	</ul>
 </nav>
-<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 <div class="mobile-menu"></div>
 <!-- menu end -->
 </div>
