@@ -110,6 +110,139 @@
 		}));
 	});
 </script>
+
+<script>
+	$(document).ready(function() {
+
+		var quantitiy = 0;
+		$('.quantity-right-plus').click(function(e) {
+
+			// Stop acting like a button
+			e.preventDefault();
+			// Get the field name
+			var quantity = parseInt($('#quantity').val());
+
+			// If is not undefined
+
+			$('#quantity').val(quantity + 1);
+
+
+			// Increment
+
+		});
+
+		$('.quantity-left-minus').click(function(e) {
+			// Stop acting like a button
+			e.preventDefault();
+			// Get the field name
+			var quantity = parseInt($('#quantity').val());
+
+			// If is not undefined
+
+			// Increment
+			if (quantity > 0) {
+				$('#quantity').val(quantity - 1);
+			}
+		});
+
+	});
+</script>
+
+
+<!-- SweetAlert2 -->
+<script src="<?= base_url() ?>template/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		const Toast = Swal.mixin({
+			toast: true,
+			position: 'top-end',
+			showConfirmButton: false,
+			timer: 3000
+		});
+
+		$('.swalDefaultSuccess').click(function() {
+			Toast.fire({
+				icon: 'success',
+				title: 'Produk Berhasil Ditambahkan ke Keranjang.'
+			})
+		});
+	});
+</script>
+
+
+<script>
+	$(document).ready(function() {
+
+		var quantitiy = 0;
+		$('.quantity-right-plus').click(function(e) {
+
+			// Stop acting like a button
+			e.preventDefault();
+			// Get the field name
+			var quantity = parseInt($('#quantity').val());
+
+			// If is not undefined
+
+			$('#quantity').val(quantity + 1);
+			$('.cart-btn').attr('data-qty', quantity + 1);
+
+			// Increment
+
+		});
+
+		$('.quantity-left-minus').click(function(e) {
+			// Stop acting like a button
+			e.preventDefault();
+			// Get the field name
+			var quantity = parseInt($('#quantity').val());
+
+			// If is not undefined
+
+			// Increment
+			if (quantity > 0) {
+				$('#quantity').val(quantity - 1);
+				$('.cart-btn').attr('data-qty', quantity - 1);
+			}
+		});
+
+	});
+</script>
+
+
+<!-- SweetAlert2 -->
+<script src="<?= base_url() ?>template/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		const Toast = Swal.mixin({
+			toast: true,
+			position: 'top-end',
+			showConfirmButton: false,
+			timer: 3000
+		});
+
+		$('.swalDefaultSuccess').click(function() {
+			Toast.fire({
+				icon: 'success',
+				title: 'Produk Berhasil Ditambahkan ke Keranjang.'
+			})
+		});
+	});
+</script>
+
+<script>
+	console.log = function() {}
+	$("#ongkir").on('change', function() {
+
+		$(".ongkir").html($(this).find(':selected').attr('data-ongkir'));
+		$(".ongkir").val($(this).find(':selected').attr('data-ongkir'));
+
+		$(".total").html($(this).find(':selected').attr('data-total'));
+		$(".total").val($(this).find(':selected').attr('data-total'));
+
+	});
+</script>
 </body>
 
 </html>
