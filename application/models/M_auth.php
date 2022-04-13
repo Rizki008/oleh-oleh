@@ -12,11 +12,11 @@ class M_auth extends CI_Model
 		return $this->db->get()->row();
 	}
 
-	public function pelanggan_login($email, $password)
+	public function pelanggan_login($username, $password)
 	{
 		$this->db->select('*');
 		$this->db->from('pelanggan');
-		$this->db->where(array('email' => $email, 'password' => $password));
+		$this->db->where(array('username' => $username, 'password' => $password));
 		return $this->db->get()->row();
 	}
 }
