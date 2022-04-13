@@ -117,36 +117,29 @@
 		</div>
 
 		<div class="row">
-			<div class="col-lg-4 col-md-6 text-center">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+			<?php if (count($produk) > 0) : ?>
+				<?php foreach ($produk as $value) : ?>
+					<div class="col-lg-4 col-md-6 text-center">
+						<?php echo form_open('belanja/add');
+						echo form_hidden('id', $value->id_produk);
+						echo form_hidden('qty', 1);
+						echo form_hidden('price', $value->harga - $value->diskon);
+						echo form_hidden('name', $value->nama_produk);
+						echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
+						?>
+						<div class="single-product-item">
+							<div class="product-image">
+								<a href="single-product.html"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" alt=""></a>
+							</div>
+							<h3><?= $value->nama_produk ?></h3>
+							<p class="product-price"><span><?= $value->berat ?> Kg</span>Rp. <?= number_format($value->harga) ?> </p>
+							<button type="submit" class="cart-btn" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->diskon > 0) ? ($value->harga - $value->diskon) : $value->harga ?>" data-id="<?= $value->id_produk ?>"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+						</div>
+						<?php echo form_close() ?>
 					</div>
-					<h3>Strawberry</h3>
-					<p class="product-price"><span>Per Kg</span> 85$ </p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 text-center">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-					</div>
-					<h3>Berry</h3>
-					<p class="product-price"><span>Per Kg</span> 70$ </p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-					</div>
-					<h3>Lemon</h3>
-					<p class="product-price"><span>Per Kg</span> 35$ </p>
-					<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
+				<?php endforeach; ?>
+			<?php else : ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
