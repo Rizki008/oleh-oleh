@@ -25,7 +25,7 @@
 				<div class="contact-form">
 					<?php
 
-					echo form_open('pelanggan/register');
+					echo form_open('pelanggan/login');
 
 					echo validation_errors('<div class="alert alert-warning alert-dismissible">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -44,31 +44,14 @@
 					?>
 
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Nama Pelanggan" name="nama_pelanggan" id="nama_pelanggan">
+						<input type="text" class="form-control" placeholder="Username" name="username" value="<?= set_value('username') ?>">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Username" name="username" id="username">
+						<input type="password" class="form-control" placeholder="Password" name="password" value="<?= set_value('password') ?>">
 					</div>
 					<div class="form-group">
-						<input type="telp" name="no_tlpn" class="form-control" placeholder="Phone" name="phone" id="no_tlpn">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" placeholder="Password" name="password" id="password">
-					</div>
-					<div class="form-group">
-						<select name="provinsi" id="provinsi" class="form-control" required>
-							<option value="">---Pilih Provinsi---</option>
-							<?php foreach ($provinsi as $key => $value) { ?>
-								<option value="<?= $value->id_provinsi ?>" data-provinsi="<?= $value->provinsi ?>" name="provinsi"><?= $value->provinsi ?></option>
-							<?php } ?>
-						</select>
-					</div>
-					<div class="form-group">
-						<select name="kabupaten" id="kabupaten" class="form-control" required></select>
-					</div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-warning" value="Submit">Register</button>
-						<a href="<?= base_url('pelanggan/login') ?>" class="tbn btn-primary">Login</a>
+						<button type="submit" class="btn btn-warning" value="Submit">Login</button>
+						<a href="<?= base_url('pelanggan/register') ?>" type="submit" class="tbn btn-primary">Register</a>
 					</div>
 					<?php echo form_close() ?>
 				</div>

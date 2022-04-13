@@ -76,4 +76,9 @@ class Pelanggan extends CI_Controller
 			$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
 		}
 	}
+
+	public function logout()
+	{
+		$this->pelanggan_login->logout();
+	}
 }
