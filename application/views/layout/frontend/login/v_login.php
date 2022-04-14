@@ -51,7 +51,7 @@
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-warning" value="Submit">Login</button>
-						<a href="<?= base_url('pelanggan/register') ?>" type="submit" class="tbn btn-primary">Register</a>
+						<a href="<?= base_url('pelanggan/register') ?>" type="submit" class="btn btn-primary">Register</a>
 					</div>
 					<?php echo form_close() ?>
 				</div>
