@@ -129,11 +129,11 @@
 						?>
 						<div class="single-product-item">
 							<div class="product-image">
-								<a href="single-product.html"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" alt=""></a>
+								<a href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" alt=""></a>
 							</div>
 							<h3><?= $value->nama_produk ?></h3>
-							<p class="product-price"><span><?= $value->berat ?> Kg</span>Rp. <?= number_format($value->harga) ?> </p>
-							<button type="submit" class="cart-btn" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->diskon > 0) ? ($value->harga - $value->diskon) : $value->harga ?>" data-id="<?= $value->id_produk ?>"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+							<p class="product-price"><span>Berat <?= $value->berat ?> Kg</span>Rp. <?= number_format($value->harga - $value->diskon, 0) ?> </p>
+							<button type="submit" class="cart-btn btn btn-primary" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->diskon > 0) ? ($value->harga - $value->diskon) : $value->harga ?>" data-id="<?= $value->id_produk ?>"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
 						</div>
 						<?php echo form_close() ?>
 					</div>
@@ -151,40 +151,9 @@
 		<div class="row clearfix">
 			<!--Image Column-->
 			<div class="image-column col-lg-6">
-				<div class="image">
-					<div class="price-box">
-						<div class="inner-price">
-							<span class="price">
-								<strong>30%</strong> <br> off per kg
-							</span>
-						</div>
-					</div>
-					<img src="assets/img/a.jpg" alt="">
-				</div>
 			</div>
 			<!--Content Column-->
 			<div class="content-column col-lg-6">
-				<h3><span class="orange-text">Deal</span> of the month</h3>
-				<h4>Hikan Strwaberry</h4>
-				<div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
-				<!--Countdown Timer-->
-				<div class="time-counter">
-					<div class="time-countdown clearfix" data-countdown="2020/2/01">
-						<div class="counter-column">
-							<div class="inner"><span class="count">00</span>Days</div>
-						</div>
-						<div class="counter-column">
-							<div class="inner"><span class="count">00</span>Hours</div>
-						</div>
-						<div class="counter-column">
-							<div class="inner"><span class="count">00</span>Mins</div>
-						</div>
-						<div class="counter-column">
-							<div class="inner"><span class="count">00</span>Secs</div>
-						</div>
-					</div>
-				</div>
-				<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 			</div>
 		</div>
 	</div>
@@ -279,77 +248,47 @@
 </section>
 <!-- end shop banner -->
 
-<!-- latest news -->
-<div class="latest-news pt-150 pb-150">
+<div class="product-section mt-150 mb-150">
 	<div class="container">
 
 		<div class="row">
-			<div class="col-lg-8 offset-lg-2 text-center">
-				<div class="section-title">
-					<h3><span class="orange-text">Our</span> News</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+			<div class="col-md-12">
+				<div class="product-filters">
+					<ul>
+						<li class="active" data-filter="*">Diskon <?= $value->nama_diskon ?></li>
+					</ul>
 				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-lg-4 col-md-6">
-				<div class="single-latest-news">
-					<a href="single-news.html">
-						<div class="latest-news-bg news-bg-1"></div>
-					</a>
-					<div class="news-text-box">
-						<h3><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></h3>
-						<p class="blog-meta">
-							<span class="author"><i class="fas fa-user"></i> Admin</span>
-							<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+		<div class="row product-lists">
+			<?php foreach ($diskon as $key => $value) { ?>
+				<div class="col-lg-4 col-md-6 text-center">
+					<?php echo form_open('belanja/add');
+					echo form_hidden('id', $value->id_produk);
+					echo form_hidden('qty', 1);
+					echo form_hidden('price', $value->harga - $value->diskon);
+					echo form_hidden('name', $value->nama_produk);
+					echo form_hidden('redirect_page', str_replace('index.php/', '', current_url())); ?>
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" alt="<?= $value->nama_produk ?>"></a>
+						</div>
+						<h3><?= $value->nama_produk ?></h3>
+						<p class="product-price">
+							<span>Harga Awal : Rp. <?= number_format($value->harga) ?></span>
+							<span>Berat <?= $value->berat ?> Kg</span>
+							Rp. <?= number_format($value->harga - $value->diskon, 0) ?>
 						</p>
-						<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-						<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						<button type="submit" class="cart-btn btn btn-primary" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->diskon > 0) ? ($value->harga - $value->diskon) : $value->harga ?>" data-id="<?= $value->id_produk ?>"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
 					</div>
+					<?php echo form_close() ?>
 				</div>
-			</div>
-			<div class="col-lg-4 col-md-6">
-				<div class="single-latest-news">
-					<a href="single-news.html">
-						<div class="latest-news-bg news-bg-2"></div>
-					</a>
-					<div class="news-text-box">
-						<h3><a href="single-news.html">A man's worth has its season, like tomato.</a></h3>
-						<p class="blog-meta">
-							<span class="author"><i class="fas fa-user"></i> Admin</span>
-							<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-						</p>
-						<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-						<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-				<div class="single-latest-news">
-					<a href="single-news.html">
-						<div class="latest-news-bg news-bg-3"></div>
-					</a>
-					<div class="news-text-box">
-						<h3><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></h3>
-						<p class="blog-meta">
-							<span class="author"><i class="fas fa-user"></i> Admin</span>
-							<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-						</p>
-						<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-						<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<a href="news.html" class="boxed-btn">More News</a>
-			</div>
+			<?php } ?>
 		</div>
 	</div>
 </div>
-<!-- end latest news -->
+<!-- end products -->
 
 <!-- logo carousel -->
 <div class="logo-carousel-section">
@@ -358,19 +297,19 @@
 			<div class="col-lg-12">
 				<div class="logo-carousel-inner">
 					<div class="single-logo-item">
-						<img src="assets/img/company-logos/1.png" alt="">
+						<img src="<?= base_url() ?>frontend/assets/img/company-logos/1.png" alt="">
 					</div>
 					<div class="single-logo-item">
-						<img src="assets/img/company-logos/2.png" alt="">
+						<img src="<?= base_url() ?>frontend/assets/img/company-logos/2.png" alt="">
 					</div>
 					<div class="single-logo-item">
-						<img src="assets/img/company-logos/3.png" alt="">
+						<img src="<?= base_url() ?>frontend/assets/img/company-logos/3.png" alt="">
 					</div>
 					<div class="single-logo-item">
-						<img src="assets/img/company-logos/4.png" alt="">
+						<img src="<?= base_url() ?>frontend/assets/img/company-logos/4.png" alt="">
 					</div>
 					<div class="single-logo-item">
-						<img src="assets/img/company-logos/5.png" alt="">
+						<img src="<?= base_url() ?>frontend/assets/img/company-logos/5.png" alt="">
 					</div>
 				</div>
 			</div>
