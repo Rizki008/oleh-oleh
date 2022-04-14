@@ -14,6 +14,15 @@ class M_produk extends CI_Model
 		return $this->db->get()->result();
 	}
 
+	public function diskon()
+	{
+		$this->db->select('*');
+		$this->db->from('produk');
+		$this->db->where('diskon>=1 and stock>=1');
+		$this->db->order_by('id_produk', 'desc');
+		return $this->db->get()->result();
+	}
+
 	public function add($data)
 	{
 		$this->db->insert('produk', $data);
