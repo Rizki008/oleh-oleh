@@ -113,7 +113,6 @@ class Produk extends CI_Controller
 					'nama_produk' => $this->input->post('nama_produk'),
 					'id_kategori' => $this->input->post('id_kategori'),
 					'berat' => $this->input->post('berat'),
-					'diskon' => $this->input->post('diskon'),
 					'harga' => $this->input->post('harga'),
 					'product_unit' => $this->input->post('product_unit'),
 					'stock' => $this->input->post('stock'),
@@ -129,7 +128,6 @@ class Produk extends CI_Controller
 				'nama_produk' => $this->input->post('nama_produk'),
 				'id_kategori' => $this->input->post('id_kategori'),
 				'berat' => $this->input->post('berat'),
-				'diskon' => $this->input->post('diskon'),
 				'harga' => $this->input->post('harga'),
 				'product_unit' => $this->input->post('product_unit'),
 				'stock' => $this->input->post('stock'),
@@ -160,6 +158,18 @@ class Produk extends CI_Controller
 		);
 		$this->m_produk->delete($data);
 		$this->session->set_flashdata('pesan', 'Produk Berhasil Dihapus');
+		redirect('produk');
+	}
+
+	public function diskon($id_produk = NULL)
+	{
+		$data = array(
+			'id_produk' => $id_produk,
+			'nama_diskon' => $this->input->post('nama_diskon'),
+			'diskon' => $this->input->post('diskon'),
+		);
+		$this->m_produk->update($data);
+		$this->session->set_flashdata('pesan', 'Diskon Berhasil Diupdate');
 		redirect('produk');
 	}
 }
