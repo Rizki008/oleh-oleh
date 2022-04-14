@@ -96,31 +96,34 @@
 		</div>
 	<?php } ?>
 	<!-- /.modal Delete -->
-	<div class="modal fade" id="diskon<?= $value->id_produk ?>">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Diskon <?= $value->nama_produk ?></h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<?php echo form_open('produk/diskon/' . $value->id_produk) ?>
-				<div class="modal-body">
-					<div class="from-group">
-						<label for="">Nama Diskon</label>
-						<input type="text" name="nama_diskon" class="form-control" required>
+
+	<?php foreach ($produk as $key => $value) { ?>
+		<div class="modal fade" id="diskon<?= $value->id_produk ?>">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Diskon <?= $value->nama_produk ?></h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 					</div>
-					<div class="from-group">
-						<label for="">Harga Diskon</label>
-						<input type="text" name="diskon" class="form-control" required>
+					<?php echo form_open('produk/diskon/' . $value->id_produk) ?>
+					<div class="modal-body">
+						<div class="from-group">
+							<label for="">Nama Diskon</label>
+							<input type="text" name="nama_diskon" class="form-control" required>
+						</div>
+						<div class="from-group">
+							<label for="">Harga Diskon</label>
+							<input type="text" name="diskon" class="form-control" required>
+						</div>
 					</div>
+					<div class="modal-footer justify-content-between">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Update</button>
+					</div>
+					<?php echo form_close() ?>
 				</div>
-				<div class="modal-footer justify-content-between">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Update</button>
-				</div>
-				<?php echo form_close() ?>
 			</div>
 		</div>
-	</div>
+	<?php } ?>
