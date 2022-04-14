@@ -1,7 +1,7 @@
 <!-- logo -->
 <div class="site-logo">
 	<a href="index.html">
-		<img src="assets/img/logo.png" alt="">
+		<img src="<?= base_url() ?>frontend/assets/img/logo.png" alt="">
 	</a>
 </div>
 <!-- logo -->
@@ -14,33 +14,19 @@
 		$jml_item = $jml_item + $value['qty'];
 	} ?>
 	<ul>
-		<li class="current-list-item"><a href="#">Home</a>
-			<ul class="sub-menu">
-				<li><a href="index.html">Static Home</a></li>
-				<li><a href="index_2.html">Slider Home</a></li>
-			</ul>
+		<li class="current-list-item"><a href="<?= base_url() ?>">Home</a>
 		</li>
-		<li><a href="about.html">About</a></li>
-		<li><a href="#">Login</a>
+		<?php $kategori = $this->m_home->kategori_produk(); ?>
+		<li><a href="#">Kategori Produk</a>
 			<ul class="sub-menu">
-				<li><a href="<?= base_url('pelanggan/register') ?>">Register</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="cart.html">Cart</a></li>
-				<li><a href="checkout.html">Check Out</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="news.html">News</a></li>
-				<li><a href="shop.html">Shop</a></li>
-			</ul>
-		</li>
-		<li><a href="news.html">News</a>
-			<ul class="sub-menu">
-				<li><a href="news.html">News</a></li>
-				<li><a href="single-news.html">Single News</a></li>
+				<?php foreach ($kategori as $key => $value) { ?>
+					<li><a href="<?= base_url('/home/kategori/' . $value->id_kategori) ?>"><?= $value->nama_kategori ?></a></li>
+				<?php } ?>
 			</ul>
 		</li>
 		<li><?php
 			if ($this->session->userdata('username') == "") { ?>
-				<a href="<?= base_url('pelanggan/register') ?>">Login</a>
+				<a href="<?= base_url('pelanggan/login') ?>">Login</a>
 			<?php } else { ?>
 				<a href="#"><?= $this->session->userdata('nama_pelanggan'); ?></a>
 			<?php } ?>
