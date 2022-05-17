@@ -66,13 +66,23 @@
 							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 								<div class="card-body">
 									<div class="shipping-address-form">
-										<p><label>Kecamatan</label>
-											<select name="id_lokasi" id="ongkir" class="form-control">
+										<p><label>Provinsi</label>
+											<!-- <select name="id_lokasi" id="ongkir" class="form-control">
 												<option value="">---Pilih Lokasi Anda---</option>
 												<?php foreach ($lokasi as $key => $value) { ?>
 													<option value="<?= $value->id_lokasi ?>" data-ongkir=<?= $value->ongkir ?> data-total=<?= $this->cart->total() +  $value->ongkir ?>><?= $value->nama_lokasi ?></option>
 												<?php } ?>
-											</select>
+											</select> -->
+											<select name="provinsi" class="form-control"></select>
+										</p>
+										<p><label>Kota</label>
+											<select name="kota" class="form-control"></select>
+										</p>
+										<p><label>Expedisi</label>
+											<select name="expedisi" class="form-control"></select>
+										</p>
+										<p><label>Pkaet</label>
+											<select name="paket" class="form-control"></select>
 										</p>
 									</div>
 								</div>
@@ -165,3 +175,74 @@
 	</div>
 </div>
 <!-- end check out section -->
+
+<script>
+	$(document).ready(function() {
+		$.ajax({
+			type: "POST",
+			url: "<?= base_url('lokasi/provinsi') ?>",
+			success: function(hasil_provinsi) {
+				// console.log(hasil_provinsi);
+				$("select[name=provinsi]").html(hasil_provinsi);
+			}
+		});
+		$("select[name=provinsi]").on("change", function() {
+			var id_provinsi_terpilih = $("option:selected", this).attr("id_provinsi");
+
+			$.ajax({
+				type: "POST",
+				url: "<?= base_url('lokasi/kota') ?>",
+				data: 'id_provinsi=' + id_provinsi_terpilih,
+				success: function(hasil_kota) {
+					// console.log(hasil_kota);
+					$("select[name=kota]").html(hasil_kota);
+				}
+			});
+		});
+
+		$("select[name=kota]").on("change", function() {
+			$.ajax({
+				type: "POST",
+				url: "<?= base_url('lokasi/expedisi') ?>",
+				success: function(hasil_expedisi) {
+					$("select[name=expedisi]").html(hasil_expedisi);
+				}
+			});
+		});
+
+		$("select[name=expedisi]").on("change", function() {
+			var expedisi_terpilih = $("select[name = expedisi]").val()
+			var id_kota_tujuan_terpilih = $("option:selected", "select[name = kota]").attr('id_kota');
+			var tot_berat = <?= $total_berat ?>;
+
+			$.ajax({
+				type: "POST",
+				url: "<?= base_url('lokasi/paket') ?>",
+				data: 'expedisi=' + expedisi_terpilih + '&id_kota=' + id_kota_tujuan_terpilih + '&berat=' + tot_berat,
+				success: function(hasil_paket) {
+					console.log(hasil_paket);
+					$("select[name=paket]").html(hasil_paket);
+				}
+			});
+		});
+
+		$("select[name=paket]").on("change", function() {
+			var dataongkir = $("option:selected", this).attr('ongkir');
+			var reverse = dataongkir.toString().split('').reverse().join(''),
+				ribuan_ongkir = reverse.match(/\d{1,3}/g);
+			ribuan_ongkir = ribuan_ongkir.join(',').split('').reverse().join('');
+			$("#ongkir").html("Rp. " + ribuan_ongkir);
+
+			var data_total_bayar = parseInt(dataongkir) + parseInt(<?= $this->cart->total() ?>);
+			var reverse2 = data_total_bayar.toString().split('').reverse().join(''),
+				ribuan_bayar = reverse2.match(/\d{1,3}/g);
+			ribuan_bayar = ribuan_bayar.join(',').split('').reverse().join('');
+			$("#total_bayar").html("Rp. " + ribuan_bayar);
+
+			var estimasi = $("option:selected", this).attr('estimasi');
+			$("input[name=estimasi]").val(estimasi);
+			$("input[name=ongkir]").val(dataongkir);
+			$("input[name=total_bayar]").val(data_total_bayar);
+		});
+	});
+</script>
