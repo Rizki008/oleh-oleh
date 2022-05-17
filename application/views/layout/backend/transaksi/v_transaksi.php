@@ -24,7 +24,7 @@
 									<th>Tanggal Order</th>
 									<th>Biaya Pengiriman</th>
 									<th>Total Bayar</th>
-									<th>Nama Pengirim</th>
+									<th>No Pengiriman (No Resi)</th>
 									<th>Action</th>
 								</tr>
 							</thead>
