@@ -28,7 +28,7 @@ class Pelanggan extends CI_Controller
 		} else {
 			$data = array(
 				'nama_pelanggan' => $this->input->post('nama_pelanggan'),
-				'id_kabupaten' => $this->input->post('kabupaten'),
+				// 'id_kabupaten' => $this->input->post('kabupaten'),
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password'),
 				'no_tlpn' => $this->input->post('no_tlpn'),
@@ -39,24 +39,24 @@ class Pelanggan extends CI_Controller
 		}
 	}
 
-	public function kabupaten()
-	{
-		$provinsi = $this->input->post('id_provinsi');
-		$kabupaten = $this->m_pelanggan->kabupaten($provinsi);
-		echo json_encode($kabupaten);
-	}
-	public function kecamatan()
-	{
-		$kabupaten = $this->input->post('id_kabupaten');
-		$kecamatan = $this->m_pelanggan->kabupaten($kabupaten);
-		echo json_encode($kecamatan);
-	}
-	public function desa()
-	{
-		$kecamatan = $this->input->post('id_kecamatan');
-		$desa = $this->m_pelanggan->kabupaten($kecamatan);
-		echo json_encode($desa);
-	}
+	// public function kabupaten()
+	// {
+	// 	$provinsi = $this->input->post('id_provinsi');
+	// 	$kabupaten = $this->m_pelanggan->kabupaten($provinsi);
+	// 	echo json_encode($kabupaten);
+	// }
+	// public function kecamatan()
+	// {
+	// 	$kabupaten = $this->input->post('id_kabupaten');
+	// 	$kecamatan = $this->m_pelanggan->kabupaten($kabupaten);
+	// 	echo json_encode($kecamatan);
+	// }
+	// public function desa()
+	// {
+	// 	$kecamatan = $this->input->post('id_kecamatan');
+	// 	$desa = $this->m_pelanggan->kabupaten($kecamatan);
+	// 	echo json_encode($desa);
+	// }
 
 	public function login()
 	{
