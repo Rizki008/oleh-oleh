@@ -144,7 +144,7 @@
 																	<span class="badge badge-primary">Pengiriman</span>
 																</td>
 																<td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-																<td><?= $value->status ?>
+																<td><?= $value->status_bayar ?>
 																	<button class="btn btn-primary btn sm" data-toggle="modal" data-target="#selesai<?= $value->id_transaksi ?>">Diterima</button>
 																</td>
 															</tr>
@@ -189,7 +189,7 @@
 																	<span class="badge badge-success">Selesai</span>
 																</td>
 																<td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-																<td><?= $value->status ?></td>
+																<td><?= $value->status_bayar ?></td>
 															</tr>
 														<?php } ?>
 													</tbody>
