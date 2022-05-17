@@ -88,7 +88,7 @@
 <!-- main js -->
 <script src="<?= base_url() ?>frontend/assets/js/main.js"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function() {
 		$("#provinsi").on('change', (function() {
 			var id_provinsi = $(this).val();
@@ -109,7 +109,7 @@
 			});
 		}));
 	});
-</script>
+</script> -->
 
 <script>
 	$(document).ready(function() {
