@@ -89,4 +89,18 @@ class M_admin extends CI_Model
 		$this->db->order_by('id_transaksi', 'desc');
 		return $this->db->get()->result();
 	}
+
+	//lokasi
+	public function data_lokasi()
+	{
+		$this->db->select('*');
+		$this->db->from('lokasi_toko');
+		$this->db->where('id', 1);
+		return $this->db->get()->row();
+	}
+	public function update($data)
+	{
+		$this->db->where('id', $data['id']);
+		$this->db->update('lokasi_toko', $data);
+	}
 }
