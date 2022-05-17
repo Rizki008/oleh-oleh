@@ -139,7 +139,7 @@
 									</tr>
 
 									<tr>
-										<th>Nama Pengirim</th>
+										<th>Nomer Pengiriman (No Resi)</th>
 										<th>:</th>
 										<td><input name="nama_pengirim" class="form-control" placeholder="Nama Pengirim" required></td>
 									</tr>
