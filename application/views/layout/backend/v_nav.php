@@ -55,24 +55,24 @@
 								</div>
 							</div>
 						</div>
-						<div class="badge badge-danger">3</div>
+						<!-- <div class="badge badge-danger">3</div> -->
 					</div>
 				</div>
 			</li>
 			<li class="nav-item sidebar-user-actions">
 				<div class="sidebar-user-menu">
-					<a href="<?= base_url('lokasi') ?>" class="nav-link"><i class="mdi mdi-settings menu-icon"></i>
-						<span class="menu-title">Data Alamat Register</span>
+					<a href="<?= base_url('admin/lokasi') ?>" class="nav-link"><i class="mdi mdi-settings menu-icon"></i>
+						<span class="menu-title">Alamat Toko</span>
 					</a>
 				</div>
 			</li>
-			<li class="nav-item sidebar-user-actions">
+			<!-- <li class="nav-item sidebar-user-actions">
 				<div class="sidebar-user-menu">
 					<a href="<?= base_url('ongkir') ?>" class="nav-link"><i class="mdi mdi-settings menu-icon"></i>
 						<span class="menu-title">Data Alamat Ongkir</span>
 					</a>
 				</div>
-			</li>
+			</li> -->
 			<li class="nav-item sidebar-user-actions">
 				<div class="sidebar-user-menu">
 					<a href="<?= base_url('auth/logout_user') ?>" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
