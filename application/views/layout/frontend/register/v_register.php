@@ -55,7 +55,7 @@
 					<div class="form-group">
 						<input type="password" class="form-control" placeholder="Password" name="password" id="password">
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<select name="provinsi" id="provinsi" class="form-control" required>
 							<option value="">---Pilih Provinsi---</option>
 							<?php foreach ($provinsi as $key => $value) { ?>
@@ -65,7 +65,7 @@
 					</div>
 					<div class="form-group">
 						<select name="kabupaten" id="kabupaten" class="form-control" required></select>
-					</div>
+					</div> -->
 					<div class="form-group">
 						<button type="submit" class="btn btn-warning" value="Submit">Register</button>
 						<a href="<?= base_url('pelanggan/login') ?>" class="btn btn-primary">Login</a>
