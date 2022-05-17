@@ -44,6 +44,32 @@
 		bacaGambar(this);
 	});
 </script>
+
+<script>
+	$(document).ready(function() {
+		$.ajax({
+			type: "POST",
+			url: "<?= base_url('rajaongkir/provinsi') ?>",
+			success: function(hasil_provinsi) {
+				// console.log(hasil_provinsi);
+				$("select[name=provinsi]").html(hasil_provinsi);
+			}
+		});
+		$("select[name=provinsi]").on("change", function() {
+			var id_provinsi_terpilih = $("option:selected", this).attr("id_provinsi");
+
+			$.ajax({
+				type: "POST",
+				url: "<?= base_url('rajaongkir/kota') ?>",
+				data: 'id_provinsi=' + id_provinsi_terpilih,
+				success: function(hasil_kota) {
+					// console.log(hasil_kota);
+					$("select[name=kota]").html(hasil_kota);
+				}
+			});
+		});
+	});
+</script>
 </body>
 
 </html>
