@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Apr 2022 pada 02.05
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.4.27
+-- Waktu pembuatan: 17 Bulan Mei 2022 pada 03.40
+-- Versi server: 10.4.20-MariaDB
+-- Versi PHP: 7.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -87,6 +87,26 @@ INSERT INTO `lokasi` (`id_lokasi`, `nama_lokasi`, `ongkir`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `lokasi_toko`
+--
+
+CREATE TABLE `lokasi_toko` (
+  `id` int(11) NOT NULL,
+  `nama_toko` varchar(125) DEFAULT NULL,
+  `lokasi` int(11) DEFAULT NULL,
+  `alamat` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `lokasi_toko`
+--
+
+INSERT INTO `lokasi_toko` (`id`, `nama_toko`, `lokasi`, `alamat`) VALUES
+(1, 'oleh-oleh', 211, 'kuningan');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `pelanggan`
 --
 
@@ -104,7 +124,8 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `id_kabupaten`, `nama_pelanggan`, `username`, `password`, `no_tlpn`) VALUES
-(1, 1, 'yanto', 'admin', '12345', '089123762517');
+(1, 1, 'yanto', 'admin', '12345', '089123762517'),
+(2, NULL, 'quen', 'admin', 'admin', '085745698745');
 
 -- --------------------------------------------------------
 
@@ -193,7 +214,9 @@ CREATE TABLE `rinci_transaksi` (
 
 INSERT INTO `rinci_transaksi` (`id_rinci`, `no_order`, `id_produk`, `qty`) VALUES
 (1, 20220417, 3, '3'),
-(2, 20220417, 2, '1');
+(2, 20220417, 2, '1'),
+(3, 20220517, 3, '1'),
+(4, 20220517, 4, '1');
 
 -- --------------------------------------------------------
 
@@ -230,7 +253,8 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_pelanggan`, `id_lokasi`, `no_order`, `tgl_order`, `nama_pelanggan`, `no_tlpn`, `alamat`, `kode_pos`, `ongkir`, `berat`, `grand_total`, `total_bayar`, `status_bayar`, `status_order`, `atas_nama`, `nama_bank`, `no_rek`, `bukti_bayar`, `nama_pengirim`, `catatan`) VALUES
-(1, 1, 2, '20220417WZRSDCGP', '2022-04-17', 'uud', '085156727368', 'sindang barang', '452157', '7000', NULL, '360500', '367500', 1, 2, 'wulan', 'bni', '1234567896541', 'bayar1.png', 'ridwan', NULL);
+(1, 1, 2, '20220417WZRSDCGP', '2022-04-17', 'uud', '085156727368', 'sindang barang', '452157', '7000', NULL, '360500', '367500', 1, 2, 'wulan', 'bni', '1234567896541', 'bayar1.png', 'ridwan', NULL),
+(2, 2, NULL, '20220517AGTY8SXS', '2022-05-17', 'uud', '123451234512', 'sindang barang', '452157', '36000', '271', '351500', '387500', 1, 2, 'wulan', 'bni', '1234567896541', 'Buket_bunga_flanel_11.jpg', '12wqw', NULL);
 
 -- --------------------------------------------------------
 
@@ -273,6 +297,12 @@ ALTER TABLE `kategori`
 --
 ALTER TABLE `lokasi`
   ADD PRIMARY KEY (`id_lokasi`);
+
+--
+-- Indeks untuk tabel `lokasi_toko`
+--
+ALTER TABLE `lokasi_toko`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `pelanggan`
@@ -339,10 +369,16 @@ ALTER TABLE `lokasi`
   MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT untuk tabel `lokasi_toko`
+--
+ALTER TABLE `lokasi_toko`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
@@ -366,13 +402,13 @@ ALTER TABLE `rekening`
 -- AUTO_INCREMENT untuk tabel `rinci_transaksi`
 --
 ALTER TABLE `rinci_transaksi`
-  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
