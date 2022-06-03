@@ -16,25 +16,25 @@ class Laporan extends CI_Controller
 	{
 		$data = array(
 			'title' => 'Laporan',
-			'isi' => 'layout/backend/laporan/v_laporan'
+			'isi' => 'layout/pemilik/laporan/v_laporan'
 		);
-		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+		$this->load->view('layout/pemilik/v_wrapper', $data, FALSE);
 	}
 	public function laporan_bulan()
 	{
 		$data = array(
 			'title' => 'Laporan',
-			'isi' => 'layout/backend/laporan/v_laporan_bulan'
+			'isi' => 'layout/pemilik/laporan/v_laporan_bulan'
 		);
-		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+		$this->load->view('layout/pemilik/v_wrapper', $data, FALSE);
 	}
 	public function laporan_tahun()
 	{
 		$data = array(
 			'title' => 'Laporan',
-			'isi' => 'layout/backend/laporan/v_laporan_tahun'
+			'isi' => 'layout/pemilik/laporan/v_laporan_tahun'
 		);
-		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+		$this->load->view('layout/pemilik/v_wrapper', $data, FALSE);
 	}
 
 	public function lap_harian()
@@ -49,9 +49,9 @@ class Laporan extends CI_Controller
 			'bulan' => $bulan,
 			'tahun' => $tahun,
 			'laporan' => $this->m_laporan->lap_harian($tanggal, $bulan, $tahun),
-			'isi' => 'layout/backend/laporan/v_lap_harian'
+			'isi' => 'layout/pemilik/laporan/v_lap_harian'
 		);
-		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+		$this->load->view('layout/pemilik/v_wrapper', $data, FALSE);
 	}
 
 	public function lap_bulanan()
@@ -64,9 +64,9 @@ class Laporan extends CI_Controller
 			'bulan' => $bulan,
 			'tahun' => $tahun,
 			'laporan' => $this->m_laporan->lap_bulanan($bulan, $tahun),
-			'isi' => 'layout/backend/laporan/v_lap_bulanan'
+			'isi' => 'layout/pemilik/laporan/v_lap_bulanan'
 		);
-		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+		$this->load->view('layout/pemilik/v_wrapper', $data, FALSE);
 	}
 
 	public function lap_tahunan()
@@ -77,9 +77,9 @@ class Laporan extends CI_Controller
 			'title' => 'Laporan Penjualan Tahunan',
 			'tahun' => $tahun,
 			'laporan' => $this->m_laporan->lap_tahunan($tahun),
-			'isi' => 'layout/backend/laporan/v_lap_tahunan'
+			'isi' => 'layout/pemilik/laporan/v_lap_tahunan'
 		);
-		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+		$this->load->view('layout/pemilik/v_wrapper', $data, FALSE);
 	}
 
 	public function lap_stock()
@@ -94,8 +94,8 @@ class Laporan extends CI_Controller
 			'bulan' => $bulan,
 			'tahun' => $tahun,
 			'laporan' => $this->m_laporan->lap_harian($tanggal, $bulan, $tahun),
-			'isi' => 'layout/backend/laporan/v_lap_stock'
+			'isi' => 'layout/pemilik/laporan/v_lap_stock'
 		);
-		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+		$this->load->view('layout/pemilik/v_wrapper', $data, FALSE);
 	}
 }
