@@ -50,10 +50,16 @@
 						<input type="text" class="form-control" placeholder="Username" name="username" id="username">
 					</div>
 					<div class="form-group">
-						<input type="telp" name="no_tlpn" class="form-control" placeholder="Phone" name="phone" id="no_tlpn">
+						<input type="telp" name="no_tlpn" class="form-control" placeholder="Phone" name="no_tlpn" id="no_tlpn">
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" placeholder="Password" name="password" id="password">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Kode Pos" name="kode_pos" id="kode_pos">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Alamat Lengkap" name="alamat" id="alamat">
 					</div>
 					<!-- <div class="form-group">
 						<select name="provinsi" id="provinsi" class="form-control" required>
