@@ -44,4 +44,59 @@ class Admin extends CI_Controller
 			redirect('admin/lokasi');
 		}
 	}
+
+	public function pelanggan()
+	{
+		$data = array(
+			'title' => 'Data Pelanggan',
+			'pelanggan' => $this->m_admin->pelanggan(),
+			'isi' => 'layout/backend/pelanggan/v_pelanggan'
+		);
+		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+	}
+
+	//user
+	public function user()
+	{
+		$data = array(
+			'title' => 'Data Pelanggan',
+			'user' => $this->m_admin->user(),
+			'pemilik' => $this->m_admin->pemilik(),
+			'isi' => 'layout/backend/user/v_user'
+		);
+		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+	}
+	//crud user
+	public function add()
+	{
+		$data = array(
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+		);
+		$this->m_admin->add($data);
+		$this->session->set_flashdata('pesan', 'Data Berasil Ditambah');
+		redirect('admin/user');
+	}
+
+	public function update($id_user = NULL)
+	{
+		$data = array(
+			'id_user' => $id_user,
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password')
+		);
+		$this->m_admin->update_user($data);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Diupdate');
+		redirect('admin/user');
+	}
+
+	public function delete($id_user = NULL)
+	{
+		$data = array(
+			'id_user' => $id_user,
+		);
+		$this->m_admin->delete_user($data);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
+		redirect('admin/user');
+	}
 }

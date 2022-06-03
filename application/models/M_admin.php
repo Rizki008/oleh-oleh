@@ -103,4 +103,41 @@ class M_admin extends CI_Model
 		$this->db->where('id', $data['id']);
 		$this->db->update('lokasi_toko', $data);
 	}
+
+	public function pelanggan()
+	{
+		$this->db->select('*');
+		$this->db->from('pelanggan');
+		$this->db->order_by('id_pelanggan', 'desc');
+		return $this->db->get()->result();
+	}
+	public function user()
+	{
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->order_by('id_user', 'desc');
+		return $this->db->get()->result();
+	}
+	public function pemilik()
+	{
+		$this->db->select('*');
+		$this->db->from('pemilik');
+		$this->db->order_by('id_pemilik', 'desc');
+		return $this->db->get()->result();
+	}
+
+	public function add($data)
+	{
+		$this->db->insert('user', $data);
+	}
+	public function update_user($data)
+	{
+		$this->db->where('id_user', $data['id_user']);
+		$this->db->update('user', $data);
+	}
+	public function delete_user($data)
+	{
+		$this->db->where('id_user', $data['id_user']);
+		$this->db->delete('user');
+	}
 }
