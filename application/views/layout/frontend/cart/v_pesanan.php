@@ -38,6 +38,8 @@
 														<tr>
 															<th>No Order</th>
 															<th>Tanggal Order</th>
+															<th>Expedisi</th>
+															<th>Estimasi</th>
 															<th>Total Harga</th>
 															<th>Ongkir</th>
 															<th>Aksi</th>
@@ -48,6 +50,8 @@
 															<tr>
 																<td><?= $value->no_order ?></td>
 																<td><?= $value->tgl_order ?></td>
+																<td><?= $value->expedisi ?> <br> <?= $value->paket ?></td>
+																<td><?= $value->estimasi ?></td>
 																<td>Rp. <?= number_format($value->total_bayar, 0) ?>
 																	<?php if ($value->status_bayar == 0) { ?>
 																		<span class="badge badge-warning">Belum Bayar</span>
@@ -88,6 +92,8 @@
 														<tr>
 															<th>No Order</th>
 															<th>Tanggal Order</th>
+															<th>Expedisi</th>
+															<th>Estimasi</th>
 															<th>Total Bayar</th>
 															<th>Ongkir</th>
 														</tr>
@@ -97,6 +103,8 @@
 															<tr>
 																<td><?= $value->no_order ?></td>
 																<td><?= $value->tgl_order ?></td>
+																<td><?= $value->expedisi ?> <br> <?= $value->paket ?></td>
+																<td><?= $value->estimasi ?></td>
 																<td>Rp. <?= number_format($value->total_bayar, 0) ?>
 																	<span class="badge badge-warning">Di proses</span>
 																	<span class="badge badge-success">Pengemasan</span>
@@ -130,6 +138,8 @@
 														<tr>
 															<th>No Order</th>
 															<th>Tanggal Order</th>
+															<th>Expedisi</th>
+															<th>Estimasi</th>
 															<th>Total Harga</th>
 															<th>Ongkir</th>
 															<th>Status</th>
@@ -140,6 +150,8 @@
 															<tr>
 																<td><?= $value->no_order ?></td>
 																<td><?= $value->tgl_order ?></td>
+																<td><?= $value->expedisi ?> <br> <?= $value->paket ?></td>
+																<td><?= $value->estimasi ?></td>
 																<td>Rp. <?= number_format($value->total_bayar, 0) ?>
 																	<span class="badge badge-primary">Pengiriman</span>
 																</td>
@@ -175,6 +187,8 @@
 														<tr>
 															<th>No Order</th>
 															<th>Tanggal Order</th>
+															<th>Expedisi</th>
+															<th>Estimasi</th>
 															<th>Total Harga</th>
 															<th>Ongkir</th>
 															<th>Status</th>
@@ -185,6 +199,8 @@
 															<tr>
 																<td><?= $value->no_order ?></td>
 																<td><?= $value->tgl_order ?></td>
+																<td><?= $value->expedisi ?></td>
+																<td><?= $value->estimasi ?></td>
 																<td>Rp. <?= number_format($value->total_bayar, 0) ?>
 																	<span class="badge badge-success">Selesai</span>
 																</td>
