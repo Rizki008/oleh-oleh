@@ -11,17 +11,17 @@
 					<span class="mdi mdi-menu"></span>
 				</button>
 				<div class="search-field d-none d-xl-block">
-					<form class="d-flex align-items-center h-100" action="#">
+					<!-- <form class="d-flex align-items-center h-100" action="#">
 						<div class="input-group">
 							<div class="input-group-prepend bg-transparent">
 								<i class="input-group-text border-0 mdi mdi-magnify"></i>
 							</div>
 							<input type="text" class="form-control bg-transparent border-0" placeholder="Search products">
 						</div>
-					</form>
+					</form> -->
 				</div>
 				<ul class="navbar-nav navbar-nav-right">
-					<li class="nav-item  dropdown d-none d-md-block">
+					<!-- <li class="nav-item  dropdown d-none d-md-block">
 						<a class="nav-link dropdown-toggle" id="reportDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Reports </a>
 						<div class="dropdown-menu navbar-dropdown" aria-labelledby="reportDropdown">
 							<a class="dropdown-item" href="#">
@@ -72,14 +72,14 @@
 								</div>
 							</a>
 						</div>
-					</li>
+					</li> -->
 					<li class="nav-item nav-profile dropdown">
 						<a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
 							<div class="nav-profile-img">
 								<img src="<?= base_url() ?>backend/assets/images/faces/face28.png" alt="image">
 							</div>
 							<div class="nav-profile-text">
-								<p class="mb-1 text-black">Henry Klein</p>
+								<p class="mb-1 text-black"><?= $this->session->userdata('username'); ?></p>
 							</div>
 						</a>
 						<div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
@@ -88,7 +88,7 @@
 							</div>
 							<div class="p-2">
 								<h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
-								<a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+								<!-- <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
 									<span>Inbox</span>
 									<span class="p-0">
 										<span class="badge badge-primary">3</span>
@@ -111,8 +111,8 @@
 								<a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
 									<span>Lock Account</span>
 									<i class="mdi mdi-lock ml-1"></i>
-								</a>
-								<a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+								</a> -->
+								<a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="<?= base_url('auth/logout_user') ?>">
 									<span>Log Out</span>
 									<i class="mdi mdi-logout ml-1"></i>
 								</a>
