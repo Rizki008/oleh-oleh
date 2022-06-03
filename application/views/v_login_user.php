@@ -28,10 +28,34 @@
 				<div class="row flex-grow">
 					<div class="col-lg-4 mx-auto">
 						<div class="auth-form-light text-left p-5">
-							<div class="brand-logo">
+							<!-- <div class="brand-logo">
 								<img src="<?= base_url() ?>backend/assets/images/logo-dark.svg">
-							</div>
+							</div> -->
 							<h4>Hello! let's get started</h4>
+							<?php
+							echo validation_errors('<div class="alert alert-warning alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <h5><i class="icon fas fa-exclamation-triangle"></i> Coba Lagi</h5>', '</div>');
+
+							if (
+								$this->session->flashdata('error')
+							) {
+								echo '<div class="alert alert-danger alert-dismissible">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <h5><i class="icon fa fa-ban"></i> Gagal</h5>';
+								echo $this->session->flashdata('error');
+								echo '</div>';
+							}
+
+							if ($this->session->flashdata('pesan')) {
+								echo '<div class="alert alert-success alert-dismissible">
+                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                <h5><i class="icon fa fa-check"></i> Sukses</h5>';
+								echo $this->session->flashdata('pesan');
+								echo '</div>';
+							}
+
+							?>
 							<h6 class="font-weight-light">Sign in to continue.</h6>
 							<form class="pt-3" action="<?= base_url('auth/user_login') ?>" method="POST">
 								<div class="form-group">
