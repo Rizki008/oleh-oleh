@@ -70,12 +70,10 @@ class Belanja extends CI_Controller
 		//proteksi halaman
 		$this->pelanggan_login->proteksi_halaman();
 
-		$this->form_validation->set_rules('alamat', 'Alamat Lengkap', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
-		$this->form_validation->set_rules('no_tlpn', 'No Telpon', 'required|min_length[11]|max_length[13]', array(
-			'required' => '%s Mohon Untuk Diisi !!!',
-			'min_length' => '%s Minimal 11 angka !!!',
-			'max_length' => '%s Maksimal 13 angka !!!',
-		));
+		$this->form_validation->set_rules('provinsi', 'Provinsi Penerima', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('kota', 'Kota Penerima', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('expedisi', 'Expedisi', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('paket', 'Paket', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 
 
 		if ($this->form_validation->run() == FALSE) {
@@ -92,10 +90,11 @@ class Belanja extends CI_Controller
 				'id_lokasi' => $this->input->post('id_lokasi'),
 				'no_order' => $this->input->post('no_order'),
 				'tgl_order' => date('Y-m-d'),
-				'nama_pelanggan' => $this->input->post('nama_pelanggan'),
-				'no_tlpn' => $this->input->post('no_tlpn'),
-				'alamat' => $this->input->post('alamat'),
-				'kode_pos' => $this->input->post('kode_pos'),
+				'provinsi' => $this->input->post('provinsi'),
+				'kota' => $this->input->post('kota'),
+				'paket' => $this->input->post('paket'),
+				'expedisi' => $this->input->post('expedisi'),
+				'estimasi' => $this->input->post('estimasi'),
 				'ongkir' => $this->input->post('ongkir'),
 				'berat' => $this->input->post('berat'),
 				'grand_total' => $this->input->post('grand_total'),
