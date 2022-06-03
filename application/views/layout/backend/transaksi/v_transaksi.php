@@ -22,6 +22,8 @@
 									<th>Nama Pelanggan</th>
 									<th>No Order</th>
 									<th>Tanggal Order</th>
+									<th>Expedisi</th>
+									<th>Estimasi</th>
 									<th>Biaya Pengiriman</th>
 									<th>Total Bayar</th>
 									<th>No Pengiriman (No Resi)</th>
@@ -34,6 +36,8 @@
 										<td><?= $value->nama_pelanggan ?></td>
 										<td><?= $value->no_order ?></td>
 										<td><?= $value->tgl_order ?></td>
+										<td><?= $value->expedisi ?> <br> <?= $value->paket ?></td>
+										<td><?= $value->estimasi ?></td>
 										<td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
 										<td>Rp. <?= number_format($value->total_bayar, 0) ?>
 											<?php if ($value->status_bayar == 0) { ?>
@@ -56,6 +60,8 @@
 										<td><?= $value->nama_pelanggan ?></td>
 										<td><a href="<?= base_url('transaksi/detail/' . $value->no_order) ?>"><?= $value->no_order ?></a></td>
 										<td><?= $value->tgl_order ?></td>
+										<td><?= $value->expedisi ?> <br> <?= $value->paket ?></td>
+										<td><?= $value->estimasi ?></td>
 										<td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
 										<td>Rp. <?= number_format($value->total_bayar, 0) ?>
 											<label class="badge badge-info">Diproses</label>
@@ -69,6 +75,8 @@
 										<td><?= $value->nama_pelanggan ?></td>
 										<td><?= $value->no_order ?></td>
 										<td><?= $value->tgl_order ?></td>
+										<td><?= $value->expedisi ?> <br> <?= $value->paket ?></td>
+										<td><?= $value->estimasi ?></td>
 										<td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
 										<td>Rp. <?= number_format($value->total_bayar, 0) ?>
 											<label class="badge badge-primary">Dikirim</label>
@@ -82,6 +90,8 @@
 										<td><?= $value->nama_pelanggan ?></td>
 										<td><?= $value->no_order ?></td>
 										<td><?= $value->tgl_order ?></td>
+										<td><?= $value->expedisi ?> <br> <?= $value->paket ?></td>
+										<td><?= $value->estimasi ?></td>
 										<td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
 										<td>Rp. <?= number_format($value->total_bayar, 0) ?>
 											<label class="badge badge-success">Selesai</label>
