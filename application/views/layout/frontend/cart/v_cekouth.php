@@ -182,10 +182,10 @@
                                     <div class="card-body">
                                         <div class="billing-address-form">
                                             <form action="index.html">
-                                                <p><input type="text" class="form-control" placeholder="Nama Penerima" name="nama_pelanggan" required></p>
-                                                <p><input type="number" class="form-control" placeholder="No Telpon" name="no_tlpn" required></p>
-                                                <p><input type="text" class="form-control" placeholder="Kode Pos" name="kode_pos" required></p>
-                                                <p><textarea name="alamat" class="form-control" cols="30" rows="10" placeholder="Alamat Lengkap" required></textarea></p>
+                                                <p><input type="text" class="form-control" placeholder="Nama Penerima" name="id_pelanggan" value="<?= $this->session->userdata('nama_pelanggan'); ?>" readonly></p>
+                                                <p><input type="number" class="form-control" placeholder="No Telpon" name="no_tlpn" value="<?= $this->session->userdata('no_tlpn'); ?>" readonly></p>
+                                                <p><input type="text" class="form-control" placeholder="Kode Pos" name="kode_pos" value="<?= $this->session->userdata('kode_pos'); ?>" readonly></p>
+                                                <p><input name="alamat" class="form-control" placeholder="Alamat Lengkap" value="<?= $this->session->userdata('alamat'); ?>" readonly></p>
                                             </form>
                                         </div>
                                     </div>
