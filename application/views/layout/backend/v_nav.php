@@ -40,7 +40,7 @@
 					<span class="menu-title">Pelanggan</span>
 				</a>
 			</li>
-			<!-- <li class="nav-item">
+			<li class="nav-item">
 				<a class="nav-link" data-toggle="collapse" href="#ui-basic-dua" aria-expanded="false" aria-controls="ui-basic">
 					<span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
 					<span class="menu-title">Master Laporan</span>
@@ -48,12 +48,12 @@
 				</a>
 				<div class="collapse" id="ui-basic-dua">
 					<ul class="nav flex-column sub-menu">
-						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan') ?>"><span class="menu-title">Laporan Harian</span></a></li>
-						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan/laporan_bulan') ?>"><span class="menu-title">Laporan Bulanan</span></a></li>
-						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan/laporan_tahun') ?>"><span class="menu-title">Laporan Tahunan</span></a></li>
+						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_admin') ?>"><span class="menu-title">Laporan Harian</span></a></li>
+						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_admin/laporan_bulan') ?>"><span class="menu-title">Laporan Bulanan</span></a></li>
+						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_admin/laporan_tahun') ?>"><span class="menu-title">Laporan Tahunan</span></a></li>
 					</ul>
 				</div>
-			</li> -->
+			</li>
 			<li class="nav-item sidebar-user-actions">
 				<div class="user-details">
 					<div class="d-flex justify-content-between align-items-center">
