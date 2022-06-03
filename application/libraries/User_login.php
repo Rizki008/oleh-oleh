@@ -29,7 +29,7 @@ class User_login
 				redirect('pemilik');
 			}
 		} else {
-			$this->ci->session->set_flashdata('pesan', 'Username atau Password salah');
+			$this->ci->session->set_flashdata('error', 'Username atau Password salah');
 			redirect('auth/user_login');
 		}
 	}
@@ -37,7 +37,7 @@ class User_login
 	public function proteksi_halaman()
 	{
 		if ($this->ci->session->userdata('username') == '') {
-			$this->ci->session->set_flashdata('pesan', 'Anda Belum Login!!!');
+			$this->ci->session->set_flashdata('error', 'Anda Belum Login!!!');
 			redirect('auth/user_login');
 		}
 	}
