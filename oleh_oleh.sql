@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2022 pada 03.40
+-- Waktu pembuatan: 03 Jun 2022 pada 13.42
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -116,16 +116,38 @@ CREATE TABLE `pelanggan` (
   `nama_pelanggan` varchar(125) DEFAULT NULL,
   `username` varchar(125) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
-  `no_tlpn` varchar(15) DEFAULT NULL
+  `no_tlpn` varchar(15) DEFAULT NULL,
+  `alamat` varchar(125) DEFAULT NULL,
+  `kode_pos` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`id_pelanggan`, `id_kabupaten`, `nama_pelanggan`, `username`, `password`, `no_tlpn`) VALUES
-(1, 1, 'yanto', 'admin', '12345', '089123762517'),
-(2, NULL, 'quen', 'admin', 'admin', '085745698745');
+INSERT INTO `pelanggan` (`id_pelanggan`, `id_kabupaten`, `nama_pelanggan`, `username`, `password`, `no_tlpn`, `alamat`, `kode_pos`) VALUES
+(1, 1, 'yanto', 'admin', '12345', '089123762517', NULL, NULL),
+(2, NULL, 'quen', 'admin', 'admin', '085745698745', 'jl. ramajaksa winduherang kuningan', '123124'),
+(3, NULL, 'uud', 'uud', '12345', '085731639595', 'kelurahan cigugur kab.kuningan', '12341');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pemilik`
+--
+
+CREATE TABLE `pemilik` (
+  `id_pemilik` int(11) NOT NULL,
+  `username` varchar(125) DEFAULT NULL,
+  `password` varchar(125) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pemilik`
+--
+
+INSERT INTO `pemilik` (`id_pemilik`, `username`, `password`) VALUES
+(1, 'pemilik', 'pemilik');
 
 -- --------------------------------------------------------
 
@@ -216,7 +238,8 @@ INSERT INTO `rinci_transaksi` (`id_rinci`, `no_order`, `id_produk`, `qty`) VALUE
 (1, 20220417, 3, '3'),
 (2, 20220417, 2, '1'),
 (3, 20220517, 3, '1'),
-(4, 20220517, 4, '1');
+(4, 20220517, 4, '1'),
+(5, 20220603, 3, '1');
 
 -- --------------------------------------------------------
 
@@ -233,8 +256,13 @@ CREATE TABLE `transaksi` (
   `nama_pelanggan` varchar(50) DEFAULT NULL,
   `no_tlpn` varchar(15) DEFAULT NULL,
   `alamat` text DEFAULT NULL,
+  `provinsi` varchar(125) DEFAULT NULL,
+  `kota` varchar(125) DEFAULT NULL,
+  `expedisi` varchar(50) DEFAULT NULL,
+  `paket` varchar(50) DEFAULT NULL,
   `kode_pos` varchar(50) DEFAULT NULL,
   `ongkir` varchar(50) DEFAULT NULL,
+  `estimasi` varchar(50) DEFAULT NULL,
   `berat` varchar(50) DEFAULT NULL,
   `grand_total` varchar(125) DEFAULT NULL,
   `total_bayar` varchar(125) DEFAULT NULL,
@@ -252,9 +280,10 @@ CREATE TABLE `transaksi` (
 -- Dumping data untuk tabel `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `id_pelanggan`, `id_lokasi`, `no_order`, `tgl_order`, `nama_pelanggan`, `no_tlpn`, `alamat`, `kode_pos`, `ongkir`, `berat`, `grand_total`, `total_bayar`, `status_bayar`, `status_order`, `atas_nama`, `nama_bank`, `no_rek`, `bukti_bayar`, `nama_pengirim`, `catatan`) VALUES
-(1, 1, 2, '20220417WZRSDCGP', '2022-04-17', 'uud', '085156727368', 'sindang barang', '452157', '7000', NULL, '360500', '367500', 1, 2, 'wulan', 'bni', '1234567896541', 'bayar1.png', 'ridwan', NULL),
-(2, 2, NULL, '20220517AGTY8SXS', '2022-05-17', 'uud', '123451234512', 'sindang barang', '452157', '36000', '271', '351500', '387500', 1, 2, 'wulan', 'bni', '1234567896541', 'Buket_bunga_flanel_11.jpg', '12wqw', NULL);
+INSERT INTO `transaksi` (`id_transaksi`, `id_pelanggan`, `id_lokasi`, `no_order`, `tgl_order`, `nama_pelanggan`, `no_tlpn`, `alamat`, `provinsi`, `kota`, `expedisi`, `paket`, `kode_pos`, `ongkir`, `estimasi`, `berat`, `grand_total`, `total_bayar`, `status_bayar`, `status_order`, `atas_nama`, `nama_bank`, `no_rek`, `bukti_bayar`, `nama_pengirim`, `catatan`) VALUES
+(1, 1, 2, '20220417WZRSDCGP', '2022-04-17', 'uud', '085156727368', 'sindang barang', NULL, NULL, NULL, NULL, '452157', '7000', NULL, NULL, '360500', '367500', 1, 2, 'wulan', 'bni', '1234567896541', 'bayar1.png', 'ridwan', NULL),
+(2, 2, NULL, '20220517AGTY8SXS', '2022-05-17', 'uud', '123451234512', 'sindang barang', NULL, NULL, NULL, NULL, '452157', '36000', NULL, '271', '351500', '387500', 1, 3, 'wulan', 'bni', '1234567896541', 'Buket_bunga_flanel_11.jpg', '12wqw', NULL),
+(3, 2, NULL, '20220603SJX6FVTN', '2022-06-03', NULL, NULL, NULL, 'Bali', 'Bangli', 'tiki', 'ECO', NULL, '24000', '4 Hari', '250', '3500', '27500', 0, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -309,6 +338,12 @@ ALTER TABLE `lokasi_toko`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
+
+--
+-- Indeks untuk tabel `pemilik`
+--
+ALTER TABLE `pemilik`
+  ADD PRIMARY KEY (`id_pemilik`);
 
 --
 -- Indeks untuk tabel `produk`
@@ -378,7 +413,13 @@ ALTER TABLE `lokasi_toko`
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `pemilik`
+--
+ALTER TABLE `pemilik`
+  MODIFY `id_pemilik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
@@ -402,19 +443,19 @@ ALTER TABLE `rekening`
 -- AUTO_INCREMENT untuk tabel `rinci_transaksi`
 --
 ALTER TABLE `rinci_transaksi`
-  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
