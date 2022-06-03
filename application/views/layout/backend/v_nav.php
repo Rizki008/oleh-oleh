@@ -48,9 +48,9 @@
 				</a>
 				<div class="collapse" id="ui-basic-dua">
 					<ul class="nav flex-column sub-menu">
-						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_admin') ?>"><span class="menu-title">Laporan Harian</span></a></li>
-						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_admin/laporan_bulan') ?>"><span class="menu-title">Laporan Bulanan</span></a></li>
-						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_admin/laporan_tahun') ?>"><span class="menu-title">Laporan Tahunan</span></a></li>
+						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_data') ?>"><span class="menu-title">Laporan Harian</span></a></li>
+						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_data/laporan_bulan') ?>"><span class="menu-title">Laporan Bulanan</span></a></li>
+						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan_data/laporan_tahun') ?>"><span class="menu-title">Laporan Tahunan</span></a></li>
 					</ul>
 				</div>
 			</li>
