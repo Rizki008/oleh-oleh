@@ -42,7 +42,7 @@ class Home extends CI_Controller
 			'title' => 'Detail Produk',
 			'produk' => $this->m_home->detail_produk($id_produk),
 			'related_products' => $this->m_home->related_products($id_produk),
-			'isi' => 'layout/frontend/detail/v_detail_produk'
+			'isi' => 'layout/frontend/detail/v_detail'
 		);
 		$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
 	}
