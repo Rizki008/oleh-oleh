@@ -29,6 +29,18 @@
 				</a>
 			</li>
 			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('admin/user') ?>">
+					<span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
+					<span class="menu-title">User</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('admin/pelanggan') ?>">
+					<span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
+					<span class="menu-title">Pelanggan</span>
+				</a>
+			</li>
+			<!-- <li class="nav-item">
 				<a class="nav-link" data-toggle="collapse" href="#ui-basic-dua" aria-expanded="false" aria-controls="ui-basic">
 					<span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
 					<span class="menu-title">Master Laporan</span>
@@ -41,7 +53,7 @@
 						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan/laporan_tahun') ?>"><span class="menu-title">Laporan Tahunan</span></a></li>
 					</ul>
 				</div>
-			</li>
+			</li> -->
 			<li class="nav-item sidebar-user-actions">
 				<div class="user-details">
 					<div class="d-flex justify-content-between align-items-center">
