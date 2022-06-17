@@ -79,7 +79,7 @@ class Belanja extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
 				'title' => 'Langsung Beli',
-				'lokasi' => $this->m_lokasi_ongkir->lokasi(),
+				// 'lokasi' => $this->m_lokasi_ongkir->lokasi(),
 				'isi' => 'layout/frontend/cart/v_cekouth'
 			);
 			$this->load->view('layout/frontend/cart/v_cekouth', $data, FALSE);
@@ -87,7 +87,7 @@ class Belanja extends CI_Controller
 			//simpan ke tabel transaksi
 			$data = array(
 				'id_pelanggan' => $this->session->userdata('id_pelanggan'),
-				'id_lokasi' => $this->input->post('id_lokasi'),
+				// 'id_lokasi' => $this->input->post('id_lokasi'),
 				'no_order' => $this->input->post('no_order'),
 				'tgl_order' => date('Y-m-d'),
 				'provinsi' => $this->input->post('provinsi'),
