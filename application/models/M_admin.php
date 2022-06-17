@@ -22,8 +22,9 @@ class M_admin extends CI_Model
 
 	public function total_transaksi()
 	{
-		$this->db->where('status_order=3');
-		return $this->db->get('transaksi')->num_rows();
+		$this->db->from('transaksi');
+		$this->db->where('status_bayar=1');
+		return $this->db->get()->num_rows();
 	}
 
 	public function data_setting()
@@ -114,7 +115,7 @@ class M_admin extends CI_Model
 	public function user()
 	{
 		$this->db->select('*');
-		$this->db->from('user');
+		$this->db->from('admin');
 		$this->db->order_by('id_user', 'desc');
 		return $this->db->get()->result();
 	}
@@ -128,16 +129,16 @@ class M_admin extends CI_Model
 
 	public function add($data)
 	{
-		$this->db->insert('user', $data);
+		$this->db->insert('admin', $data);
 	}
 	public function update_user($data)
 	{
 		$this->db->where('id_user', $data['id_user']);
-		$this->db->update('user', $data);
+		$this->db->update('admin', $data);
 	}
 	public function delete_user($data)
 	{
 		$this->db->where('id_user', $data['id_user']);
-		$this->db->delete('user');
+		$this->db->delete('admin');
 	}
 }
