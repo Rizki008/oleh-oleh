@@ -66,6 +66,7 @@ class M_transaksi extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('transaksi');
+		$this->db->join('pelanggan', 'transaksi.id_pelanggan = pelanggan.id_pelanggan', 'left');
 		$this->db->join('rinci_transaksi', 'transaksi.no_order = rinci_transaksi.no_order', 'left');
 		$this->db->join('produk', 'rinci_transaksi.id_produk = produk.id_produk', 'left');
 		$this->db->where('transaksi.no_order', $no_order);
