@@ -23,7 +23,7 @@ class Pelanggan extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
 				'title' => 'Registrasi Pelanggan',
-				'provinsi' => $this->m_lokasi->provinsi(),
+				// 'provinsi' => $this->m_lokasi->provinsi(),
 				'isi' => 'layout/frontend/register/v_register'
 			);
 			$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
