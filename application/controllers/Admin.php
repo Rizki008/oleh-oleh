@@ -14,6 +14,10 @@ class Admin extends CI_Controller
 	{
 		$data = array(
 			'title' => 'Dashboard',
+			'total_pelanggan' => $this->m_admin->total_pelanggan(),
+			'total_produk' => $this->m_admin->total_produk(),
+			'total_pembayaran' => $this->m_admin->total_transaksi(),
+			'total_pesanan' => $this->m_admin->total_pesanan(),
 			'isi' => 'v_admin'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
