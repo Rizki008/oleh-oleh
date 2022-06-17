@@ -2,7 +2,7 @@
 	<!-- partial:partials/_sidebar.html -->
 	<nav class="sidebar sidebar-offcanvas" id="sidebar">
 		<ul class="nav">
-			<li class="nav-item nav-category">Main</li>
+			<li class="nav-item nav-category">Master Data</li>
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('pemilik') ?>">
 					<span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
@@ -22,6 +22,12 @@
 						<li class="nav-item"> <a class="nav-link" href="<?= base_url('laporan/laporan_tahun') ?>"><span class="menu-title">Laporan Tahunan</span></a></li>
 					</ul>
 				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('pemilik/user') ?>">
+					<span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
+					<span class="menu-title">User</span>
+				</a>
 			</li>
 			<li class="nav-item sidebar-user-actions">
 				<div class="user-details">
