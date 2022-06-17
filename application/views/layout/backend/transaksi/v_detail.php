@@ -141,7 +141,7 @@
 									<tr>
 										<th>Nomer Pengiriman (No Resi)</th>
 										<th>:</th>
-										<td><input name="nama_pengirim" class="form-control" placeholder="Nama Pengirim" required></td>
+										<td><input name="nama_pengirim" class="form-control" placeholder="No Resi" required></td>
 									</tr>
 
 								</table>
