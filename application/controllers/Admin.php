@@ -59,11 +59,64 @@ class Admin extends CI_Controller
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
 	}
 
+	//crud user
+	public function add_pelanggan()
+	{
+		$data = array(
+			'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+			'no_tlpn' => $this->input->post('no_tlpn'),
+			'alamat' => $this->input->post('alamat'),
+			'kode_pos' => $this->input->post('kode_pos'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password')
+		);
+		$this->m_admin->add_pelanggan($data);
+		$this->session->set_flashdata('pesan', 'Data Berasil Ditambah');
+		redirect('admin/pelanggan');
+	}
+
+	public function update_pelanggan($id_pelanggan = NULL)
+	{
+		$data = array(
+			'id_pelanggan' => $id_pelanggan,
+			'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+			'no_tlpn' => $this->input->post('no_tlpn'),
+			'alamat' => $this->input->post('alamat'),
+			'kode_pos' => $this->input->post('kode_pos'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password')
+		);
+		$this->m_admin->update_pelanggan($data);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Diupdate');
+		redirect('admin/pelanggan');
+	}
+
+	public function delete_pelanggan($id_pelanggan = NULL)
+	{
+		$data = array(
+			'id_pelanggan' => $id_pelanggan,
+		);
+		$this->m_admin->delete_pelanggan($data);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
+		redirect('admin/pelanggan');
+	}
+
 	//user
+	public function pemilik()
+	{
+		$data = array(
+			'title' => 'Data Pemilik',
+			'user' => $this->m_admin->pemilik(),
+			'pemilik' => $this->m_admin->pemilik(),
+			'isi' => 'layout/backend/pemilik/v_pemilik'
+		);
+		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+	}
+	//admin
 	public function user()
 	{
 		$data = array(
-			'title' => 'Data Pelanggan',
+			'title' => 'Data Admin',
 			'user' => $this->m_admin->user(),
 			'pemilik' => $this->m_admin->pemilik(),
 			'isi' => 'layout/backend/user/v_user'
