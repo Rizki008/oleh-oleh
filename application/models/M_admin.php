@@ -141,4 +141,18 @@ class M_admin extends CI_Model
 		$this->db->where('id_user', $data['id_user']);
 		$this->db->delete('admin');
 	}
+	public function add_pelanggan($data)
+	{
+		$this->db->insert('pelanggan', $data);
+	}
+	public function update_pelanggan($data)
+	{
+		$this->db->where('id_pelanggan', $data['id_pelanggan']);
+		$this->db->update('pelanggan', $data);
+	}
+	public function delete_pelanggan($data)
+	{
+		$this->db->where('id_pelanggan', $data['id_pelanggan']);
+		$this->db->delete('pelanggan');
+	}
 }
