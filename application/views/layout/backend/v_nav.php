@@ -28,12 +28,18 @@
 					<span class="menu-title">Transaksi</span>
 				</a>
 			</li>
-			<!-- <li class="nav-item">
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('admin/pemilik') ?>">
+					<span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
+					<span class="menu-title">Pemilik</span>
+				</a>
+			</li>
+			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('admin/user') ?>">
 					<span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
-					<span class="menu-title">User</span>
+					<span class="menu-title">Admin</span>
 				</a>
-			</li> -->
+			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('admin/pelanggan') ?>">
 					<span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
