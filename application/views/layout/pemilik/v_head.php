@@ -21,4 +21,6 @@
 	<link rel="stylesheet" href="<?= base_url() ?>backend/assets/css/style.css">
 	<!-- End layout styles -->
 	<link rel="shortcut icon" href="<?= base_url() ?>backend/assets/images/favicon.png" />
+	<script src="<?= base_url() ?>chart/dist/Chart.min.js"></script>
+	<script src="<?= base_url() ?>chart/samples/utils.js"></script>
 </head>

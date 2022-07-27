@@ -23,12 +23,12 @@
 					</ul>
 				</div>
 			</li>
-			<li class="nav-item">
+			<!-- <li class="nav-item">
 				<a class="nav-link" href="<?= base_url('pemilik/user') ?>">
 					<span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
 					<span class="menu-title">User</span>
 				</a>
-			</li>
+			</li> -->
 			<li class="nav-item sidebar-user-actions">
 				<div class="user-details">
 					<div class="d-flex justify-content-between align-items-center">

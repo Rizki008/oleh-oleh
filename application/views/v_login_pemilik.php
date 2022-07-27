@@ -29,10 +29,10 @@
 					<div class="col-lg-4 mx-auto">
 						<div class="auth-form-light text-left p-5">
 							<div class="brand-logo">
-								<img src="<?= base_url() ?>backend/assets/images/logo-dark.svg">
+								<img src="<?= base_url() ?>backend/assets/images/logo.png">
 							</div>
-							<h4>Hello! let's get started</h4>
-							<h6 class="font-weight-light">Sign in to continue.</h6>
+							<h4>Toko Oleh-oleh IPENG</h4>
+							<h6 class="font-weight-light">Silahkan Untuk Login</h6>
 							<?php
 							echo validation_errors('<div class="alert alert-warning alert-dismissible">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

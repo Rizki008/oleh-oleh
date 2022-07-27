@@ -72,8 +72,8 @@
 								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary mr-2">Submit</button>
-						<a href="<?= base_url('produk') ?>" class="btn btn-light">Cancel</a>
+						<button type="submit" class="btn btn-primary mr-2">Simpan</button>
+						<a href="<?= base_url('produk') ?>" class="btn btn-light">Batal</a>
 						<?php echo form_close() ?>
 					</div>
 				</div>

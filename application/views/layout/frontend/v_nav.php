@@ -1,7 +1,7 @@
 <!-- logo -->
 <div class="site-logo">
 	<a href="index.html">
-		<img src="<?= base_url() ?>frontend/assets/img/logo.png" alt="">
+		<img src="<?= base_url() ?>frontend/assets/img/logos.png" alt="">
 	</a>
 </div>
 <!-- logo -->
@@ -26,18 +26,18 @@
 		</li>
 		<li><?php
 			if ($this->session->userdata('username') == "") { ?>
-				<a href="<?= base_url('pelanggan/login') ?>">Login</a>
+				<a href="<?= base_url('pelanggan/login') ?>">Masuk</a>
 			<?php } else { ?>
 				<a href="#"><?= $this->session->userdata('nama_pelanggan'); ?></a>
 			<?php } ?>
 		</li>
 		<li>
 			<?php if ($this->session->userdata('username') == "") { ?>
-				<a href="#">Shop</a>
+				<a href="#">Pesanan Saya</a>
 			<?php } else { ?>
-				<a href="shop.html">Shop</a>
+				<a href="shop.html">Pesanan Saya</a>
 				<ul class="sub-menu">
-					<li><a href="<?= base_url('pesanan') ?>">Cart</a></li>
+					<li><a href="<?= base_url('pesanan') ?>">Keranjang</a></li>
 				</ul>
 			<?php } ?>
 		</li>

@@ -3,8 +3,8 @@
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 text-center">
 				<div class="breadcrumb-text">
-					<p>Fresh and Organic</p>
-					<h1>Check Out Product</h1>
+					<!-- <p>Fresh and Organic</p> -->
+					<h1>Pesanan Saya</h1>
 				</div>
 			</div>
 		</div>
@@ -247,30 +247,3 @@
 	</div>
 	<!-- /.modal -->
 <?php } ?>
-<!-- logo carousel -->
-<div class="logo-carousel-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="logo-carousel-inner">
-					<div class="single-logo-item">
-						<img src="<?= base_url() ?>frontend/assets/img/company-logos/1.png" alt="">
-					</div>
-					<div class="single-logo-item">
-						<img src="<?= base_url() ?>frontend/assets/img/company-logos/2.png" alt="">
-					</div>
-					<div class="single-logo-item">
-						<img src="<?= base_url() ?>frontend/assets/img/company-logos/3.png" alt="">
-					</div>
-					<div class="single-logo-item">
-						<img src="<?= base_url() ?>frontend/assets/img/company-logos/4.png" alt="">
-					</div>
-					<div class="single-logo-item">
-						<img src="<?= base_url() ?>frontend/assets/img/company-logos/5.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- end logo carousel -->

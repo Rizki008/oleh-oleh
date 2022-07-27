@@ -140,8 +140,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>Fresh and Organic</p>
-                        <h1>Check Out Product</h1>
+                        <!-- <p>Fresh and Organic</p> -->
+                        <h1>Beli Pesanan</h1>
                     </div>
                 </div>
             </div>
@@ -242,13 +242,13 @@
                         <table class="order-details">
                             <thead>
                                 <tr>
-                                    <th>Your order Details</th>
-                                    <th>Price</th>
+                                    <th>Detail Pesanan</th>
+                                    <th>Harga</th>
                                 </tr>
                             </thead>
                             <tbody class="order-details-body">
                                 <tr>
-                                    <td>Product</td>
+                                    <td>Produk</td>
                                     <td>Total</td>
                                 </tr>
                             </tbody>
@@ -289,7 +289,7 @@
                                 ?>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 px-4">CekOut</button>
+                        <button type="submit" class="btn btn-primary py-3 px-4">Beli</button>
                     </div>
                 </div>
             </div>

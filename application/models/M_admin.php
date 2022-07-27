@@ -155,4 +155,16 @@ class M_admin extends CI_Model
 		$this->db->where('id_pelanggan', $data['id_pelanggan']);
 		$this->db->delete('pelanggan');
 	}
+
+	public function grafik_produk()
+	{
+		$this->db->select_sum('qty');
+		$this->db->select('produk.nama_produk');
+		//$this->db->select('rinci_transaksi.qty');
+		$this->db->from('rinci_transaksi');
+		$this->db->join('produk', 'rinci_transaksi.id_produk = produk.id_produk', 'left');
+		$this->db->group_by('rinci_transaksi.id_produk');
+		$this->db->order_by('qty', 'desc');
+		return $this->db->get()->result();
+	}
 }

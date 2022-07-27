@@ -4,8 +4,8 @@
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 text-center">
 				<div class="breadcrumb-text">
-					<p>Fresh and Organic</p>
-					<h1>Cart</h1>
+					<p>Keranjang Belanja</p>
+					<!-- <h1>Cart</h1> -->
 				</div>
 			</div>
 		</div>
@@ -24,12 +24,12 @@
 						<thead class="cart-table-head">
 							<tr class="table-head-row">
 								<th class="product-remove"></th>
-								<th class="product-image">Product Image</th>
-								<th class="product-name">Name</th>
-								<th class="product-price">Price</th>
-								<th class="product-heavy">Berat</th>
-								<th class="product-quantity">Quantity</th>
-								<th class="product-total">Total</th>
+								<th class="product-image">Gambar Produk</th>
+								<th class="product-name">Nama Produk</th>
+								<th class="product-price">Berat</th>
+								<th class="product-heavy">Harga Produk</th>
+								<th class="product-quantity">quantity</th>
+								<th class="product-total">Total Harga</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -90,8 +90,8 @@
 						</tbody>
 					</table>
 					<div class="cart-buttons">
-						<button type="submit" class="boxed-btn btn btn-primary">Update Cart</button>
-						<a href="<?= base_url('belanja/cekout') ?>" class="boxed-btn black">Check Out</a>
+						<button type="submit" class="boxed-btn btn btn-primary">Perbarui Keranjang</button>
+						<a href="<?= base_url('belanja/cekout') ?>" class="boxed-btn black">Beli</a>
 					</div>
 				</div>
 			</div>

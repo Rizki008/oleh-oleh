@@ -73,8 +73,8 @@
 						<select name="kabupaten" id="kabupaten" class="form-control" required></select>
 					</div> -->
 					<div class="form-group">
-						<button type="submit" class="btn btn-warning" value="Submit">Register</button>
-						<a href="<?= base_url('pelanggan/login') ?>" class="btn btn-primary">Login</a>
+						<button type="submit" class="btn btn-warning" value="Submit">Registrasi</button>
+						<a href="<?= base_url('pelanggan/login') ?>" class="btn btn-primary">Masuk</a>
 					</div>
 					<?php echo form_close() ?>
 				</div>
@@ -82,16 +82,16 @@
 			<div class="col-lg-4">
 				<div class="contact-form-wrap">
 					<div class="contact-form-box">
-						<h4><i class="fas fa-map"></i> Shop Address</h4>
-						<p>34/8, East Hukupara <br> Gifirtok, Sadan. <br> Country Name</p>
+						<h4><i class="fas fa-map"></i> Alamat Toko</h4>
+						<p>Jl. Awirarangan 01/03 <br> Kab.kuningan</p>
 					</div>
 					<div class="contact-form-box">
-						<h4><i class="far fa-clock"></i> Shop Hours</h4>
-						<p>MON - FRIDAY: 8 to 9 PM <br> SAT - SUN: 10 to 8 PM </p>
+						<h4><i class="far fa-clock"></i> Jam Buka</h4>
+						<p>Sening - Minggu: 8 sampai 7 malam
 					</div>
 					<div class="contact-form-box">
-						<h4><i class="fas fa-address-book"></i> Contact</h4>
-						<p>Phone: +00 111 222 3333 <br> Email: support@fruitkha.com</p>
+						<h4><i class="fas fa-address-book"></i> Kontak</h4>
+						<p>Phone: +62 857 1281 67582 <br> Email: ipeng-oleholeh@gmail.com</p>
 					</div>
 				</div>
 			</div>
@@ -99,18 +99,3 @@
 	</div>
 </div>
 <!-- end contact form -->
-
-<!-- find our location -->
-<div class="find-location blue-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<p> <i class="fas fa-map-marker-alt"></i> Find Our Location</p>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- end find our location -->
-
-
-<!-- end google map section -->

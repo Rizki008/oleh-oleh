@@ -31,7 +31,8 @@
 							<!-- <div class="brand-logo">
 								<img src="<?= base_url() ?>backend/assets/images/logo-dark.svg">
 							</div> -->
-							<h4>Hello! let's get started</h4>
+							<h4>Toko Oleh-oleh IPENG</h4>
+							<h6 class="font-weight-light">Silahkan Untuk Login</h6>
 							<?php
 							echo validation_errors('<div class="alert alert-warning alert-dismissible">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -56,7 +57,6 @@
 							}
 
 							?>
-							<h6 class="font-weight-light">Sign in to continue.</h6>
 							<form class="pt-3" action="<?= base_url('auth/user_login') ?>" method="POST">
 								<div class="form-group">
 									<input type="text" name="username" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" required>

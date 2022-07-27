@@ -4,8 +4,8 @@
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 text-center">
 				<div class="breadcrumb-text">
-					<p>Fresh and Organic</p>
-					<h1>Check Out Product</h1>
+					<!-- <p>Fresh and Organic</p> -->
+					<h1>Bayar Pesanan</h1>
 				</div>
 			</div>
 		</div>
@@ -21,6 +21,7 @@
 				<div class="checkout-accordion-wrap">
 					<div class="accordion" id="accordionExample">
 						<div class="card single-accordion">
+							<h4>Pelanggan</h4>
 							<div class="card-header" id="headingOne">
 								<h5 class="mb-0">
 									<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -57,12 +58,22 @@
 												<label>No Rek</label>
 												<input name="no_rek" class="form-control" placeholder="No Rek" required>
 											</div>
+											<!-- <div class="form-group">
+												<label for="exampleInputFile">Bukti Bayar</label>
+												<div class="input-group">
+													<div class="custom-file">
+														<input type="file" name="bukti_bayar" class="custom-file-input" required>
+														<label class="custom-file-label" for="exampleInputFile">Pilih File</label>
+													</div>
+												</div>
+											</div> -->
 											<div class="form-group">
 												<label for="exampleInputFile">Bukti Bayar</label>
 												<div class="input-group">
 													<div class="custom-file">
-														<input type="file" name="bukti_bayar" class="custom-file-input" required">
-														<label class="custom-file-label" for="exampleInputFile">Pilih File</label>
+														<input type="file" id="bukti_bayar" name="bukti_bayar" style="display:none" onchange="document.getElementById('filename').value=this.value">
+														<input type="text" id="filename">
+														<input type="button" value="Upload Bukti" onclick="document.getElementById('bukti_bayar').click()">
 													</div>
 												</div>
 											</div>
@@ -70,8 +81,8 @@
 										<!-- /.card-body -->
 
 										<div class="card-footer">
-											<a href="<?= base_url('pesanan_saya') ?>" class="btn btn-success">Back</a>
-											<button type="submit" class="btn btn-primary">Submit</button>
+											<a href="<?= base_url('pesanan') ?>" class="btn btn-success">Kembali</a>
+											<button type="submit" class="btn btn-primary">Bayar</button>
 										</div>
 										<?php echo form_close() ?>
 									</div>
@@ -82,6 +93,7 @@
 				</div>
 			</div>
 			<div class="col-lg-4">
+				<h4>Toko IPENG</h4>
 				<div class="order-details-wrap">
 					<table class="order-details">
 						<thead>
