@@ -96,7 +96,7 @@
 								<a href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" alt=""></a>
 							</div>
 							<h3><?= $value->nama_produk ?></h3>
-							<p class="product-price"><span>Berat <?= $value->berat ?> Kg</span>Rp. <?= number_format($value->harga - $value->diskon, 0) ?> </p>
+							<p class="product-price"><span>Berat <?= $value->berat ?> <?= $value->product_unit ?></span>Rp. <?= number_format($value->harga - $value->diskon, 0) ?> </p>
 							<button type="submit" class="cart-btn btn btn-primary" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->diskon > 0) ? ($value->harga - $value->diskon) : $value->harga ?>" data-id="<?= $value->id_produk ?>"><i class="fas fa-shopping-cart"></i> masukan ke keranjang</button>
 						</div>
 						<?php echo form_close() ?>
