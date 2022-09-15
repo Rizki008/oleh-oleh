@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
-
-	<!-- title -->
 	<title><?= $title ?></title>
-
-	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="<?= base_url() ?>frontend/assets/img/logos.png">
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-	<!-- fontawesome -->
-	<link rel="stylesheet" href="<?= base_url() ?>frontend/assets/css/all.min.css">
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="<?= base_url() ?>frontend/assets/bootstrap/css/bootstrap.min.css">
-	<!-- owl carousel -->
-	<link rel="stylesheet" href="<?= base_url() ?>frontend/assets/css/owl.carousel.css">
-	<!-- magnific popup -->
-	<link rel="stylesheet" href="<?= base_url() ?>frontend/assets/css/magnific-popup.css">
-	<!-- animate css -->
-	<link rel="stylesheet" href="<?= base_url() ?>frontend/assets/css/animate.css">
-	<!-- mean menu css -->
-	<link rel="stylesheet" href="<?= base_url() ?>frontend/assets/css/meanmenu.min.css">
-	<!-- main style -->
-	<link rel="stylesheet" href="<?= base_url() ?>frontend/assets/css/main.css">
-	<!-- responsive -->
-	<link rel="stylesheet" href="<?= base_url() ?>frontend/assets/css/responsive.css">
-
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="all,follow">
+	<!-- gLightbox gallery-->
+	<link rel="stylesheet" href="<?= base_url() ?>distribution/vendor/glightbox/css/glightbox.min.css">
+	<!-- Range slider-->
+	<link rel="stylesheet" href="<?= base_url() ?>distribution/vendor/nouislider/nouislider.min.css">
+	<!-- Choices CSS-->
+	<link rel="stylesheet" href="<?= base_url() ?>distribution/vendor/choices.js/public/assets/styles/choices.min.css">
+	<!-- Swiper slider-->
+	<link rel="stylesheet" href="<?= base_url() ?>distribution/vendor/swiper/swiper-bundle.min.css">
+	<!-- Google fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
+	<!-- theme stylesheet-->
+	<link rel="stylesheet" href="<?= base_url() ?>distribution/css/style.default.css" id="theme-stylesheet">
+	<!-- Custom stylesheet - for your changes-->
+	<link rel="stylesheet" href="<?= base_url() ?>distribution/css/custom.css">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="<?= base_url() ?>distribution/img/favicon.png">
 </head>

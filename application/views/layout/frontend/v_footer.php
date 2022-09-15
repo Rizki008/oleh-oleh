@@ -1,84 +1,80 @@
-<!-- footer -->
-<div class="footer-area">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-box about-widget">
-					<h2 class="widget-title">Tentang Ipeng</h2>
-					<p>Toko Oleh-oleh khas kuningan, berdiri sejak tahun 1999.</p>
-				</div>
+<footer class="bg-dark text-white">
+	<div class="container py-4">
+		<div class="row py-5">
+			<div class="col-md-4 mb-3 mb-md-0">
+				<h6 class="text-uppercase mb-3">Customer services</h6>
+				<ul class="list-unstyled mb-0">
+					<li><a class="footer-link" href="#!">Help &amp; Contact Us</a></li>
+					<li><a class="footer-link" href="#!">Returns &amp; Refunds</a></li>
+					<li><a class="footer-link" href="#!">Online Stores</a></li>
+					<li><a class="footer-link" href="#!">Terms &amp; Conditions</a></li>
+				</ul>
 			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-box get-in-touch">
-					<h2 class="widget-title">Kontak kami di:</h2>
-					<ul>
-						<!-- <li>34/8, East Hukupara, Gifirtok, Sadan.</li> -->
-						<li>ipeng-oleholeh@gmail.com.com</li>
-						<li>+62 851 2192 1827</li>
-					</ul>
+			<div class="col-md-4 mb-3 mb-md-0">
+				<h6 class="text-uppercase mb-3">Company</h6>
+				<ul class="list-unstyled mb-0">
+					<li><a class="footer-link" href="#!">What We Do</a></li>
+					<li><a class="footer-link" href="#!">Available Services</a></li>
+					<li><a class="footer-link" href="#!">Latest Posts</a></li>
+					<li><a class="footer-link" href="#!">FAQs</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<h6 class="text-uppercase mb-3">Social media</h6>
+				<ul class="list-unstyled mb-0">
+					<li><a class="footer-link" href="#!">Twitter</a></li>
+					<li><a class="footer-link" href="#!">Instagram</a></li>
+					<li><a class="footer-link" href="#!">Tumblr</a></li>
+					<li><a class="footer-link" href="#!">Pinterest</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="border-top pt-4" style="border-color: #1d1d1d !important">
+			<div class="row">
+				<div class="col-md-6 text-center text-md-start">
+					<p class="small text-muted mb-0">&copy; 2021 All rights reserved.</p>
+				</div>
+				<div class="col-md-6 text-center text-md-end">
+					<p class="small text-muted mb-0">Template designed by <a class="text-white reset-anchor" href="https://bootstrapious.com/p/boutique-bootstrap-e-commerce-template">Bootstrapious</a></p>
+					<!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- end footer -->
+</footer>
+<!-- JavaScript files-->
+<script src="<?= base_url() ?>distribution/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url() ?>distribution/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="<?= base_url() ?>distribution/vendor/nouislider/nouislider.min.js"></script>
+<script src="<?= base_url() ?>distribution/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="<?= base_url() ?>distribution/vendor/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="<?= base_url() ?>distribution/js/front.js"></script>
+<script>
+	// ------------------------------------------------------- //
+	//   Inject SVG Sprite - 
+	//   see more here 
+	//   https://css-tricks.com/ajaxing-svg-sprite/
+	// ------------------------------------------------------ //
+	function injectSvgSprite(path) {
 
-<!-- copyright -->
-<div class="copyright">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6 col-md-12">
-			</div>
-
-		</div>
-	</div>
-</div>
-<!-- end copyright -->
-
-<!-- jquery -->
-<script src="<?= base_url() ?>frontend/assets/js/jquery-1.11.3.min.js"></script>
-<!-- bootstrap -->
-<script src="<?= base_url() ?>frontend/assets/bootstrap/js/bootstrap.min.js"></script>
-<!-- count down -->
-<script src="<?= base_url() ?>frontend/assets/js/jquery.countdown.js"></script>
-<!-- isotope -->
-<script src="<?= base_url() ?>frontend/assets/js/jquery.isotope-3.0.6.min.js"></script>
-<!-- waypoints -->
-<script src="<?= base_url() ?>frontend/assets/js/waypoints.js"></script>
-<!-- owl carousel -->
-<script src="<?= base_url() ?>frontend/assets/js/owl.carousel.min.js"></script>
-<!-- magnific popup -->
-<script src="<?= base_url() ?>frontend/assets/js/jquery.magnific-popup.min.js"></script>
-<!-- mean menu -->
-<script src="<?= base_url() ?>frontend/assets/js/jquery.meanmenu.min.js"></script>
-<!-- sticker js -->
-<script src="<?= base_url() ?>frontend/assets/js/sticker.js"></script>
-<!-- main js -->
-<script src="<?= base_url() ?>frontend/assets/js/main.js"></script>
-
-<!-- <script type="text/javascript">
-	$(document).ready(function() {
-		$("#provinsi").on('change', (function() {
-			var id_provinsi = $(this).val();
-			$.ajax({
-				method: "POST",
-				url: "<?php echo base_url('Pelanggan/kabupaten') ?>",
-				data: 'id_provinsi=' + id_provinsi,
-				async: true,
-				type: 'get',
-				dataType: 'json',
-				success: function(data_kabupaten) {
-					console.log(data_kabupaten);
-					$('#kabupaten').append('<option>---Pilih Kabupaten---</option>')
-					for (var i = 0; i < data_kabupaten.length; i++) {
-						$('#kabupaten').append('<option value=' + data_kabupaten[i].id_kabupaten + '>' + data_kabupaten[i].kabupaten + '</option>');
-					}
-				}
-			});
-		}));
-	});
-</script> -->
-
+		var ajax = new XMLHttpRequest();
+		ajax.open("GET", path, true);
+		ajax.send();
+		ajax.onload = function(e) {
+			var div = document.createElement("div");
+			div.className = 'd-none';
+			div.innerHTML = ajax.responseText;
+			document.body.insertBefore(div, document.body.childNodes[0]);
+		}
+	}
+	// this is set to BootstrapTemple website as you cannot 
+	// inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+	// while using file:// protocol
+	// pls don't forget to change to your domain :)
+	injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg');
+</script>
+<!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <script>
 	$(document).ready(function() {
 
@@ -211,6 +207,7 @@
 
 	});
 </script>
+</div>
 </body>
 
 </html>

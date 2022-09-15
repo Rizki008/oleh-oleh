@@ -1,82 +1,50 @@
-<!-- logo -->
-<div class="site-logo">
-	<a href="index.html">
-		<img src="<?= base_url() ?>frontend/assets/img/logos.png" alt="">
-	</a>
-</div>
-<!-- logo -->
-
-<!-- menu start -->
-<nav class="main-menu">
-	<?php $keranjang = $this->cart->contents();
-	$jml_item = 0;
-	foreach ($keranjang as $key => $value) {
-		$jml_item = $jml_item + $value['qty'];
-	} ?>
-	<ul>
-		<li class="current-list-item"><a href="<?= base_url() ?>">Home</a>
-		</li>
-		<?php $kategori = $this->m_home->kategori_produk(); ?>
-		<li><a href="#">Kategori Produk</a>
-			<ul class="sub-menu">
-				<?php foreach ($kategori as $key => $value) { ?>
-					<li><a href="<?= base_url('/home/kategori/' . $value->id_kategori) ?>"><?= $value->nama_kategori ?></a></li>
-				<?php } ?>
-			</ul>
-		</li>
-		<li><?php
-			if ($this->session->userdata('username') == "") { ?>
-				<a href="<?= base_url('pelanggan/login') ?>">Masuk</a>
-			<?php } else { ?>
-				<a href="#"><?= $this->session->userdata('nama_pelanggan'); ?></a>
-			<?php } ?>
-		</li>
-		<li>
-			<?php if ($this->session->userdata('username') == "") { ?>
-				<a href="#">Pesanan Saya</a>
-			<?php } else { ?>
-				<a href="shop.html">Pesanan Saya</a>
-				<ul class="sub-menu">
-					<li><a href="<?= base_url('pesanan') ?>">Keranjang</a></li>
+<?php $kategori = $this->m_home->kategori_produk(); ?>
+<header class="header bg-white">
+	<div class="container px-lg-3">
+		<nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="<?= base_url() ?>"><span class="fw-bold text-uppercase text-dark">TOKO IPENG</span></a>
+			<button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<!-- Link--><a class="nav-link active" href="<?= base_url() ?>">Home</a>
+					</li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategori</a>
+						<div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown">
+							<?php foreach ($kategori as $key => $value) { ?>
+								<a class="dropdown-item border-0 transition-link" href="<?= base_url('/home/kategori/' . $value->id_kategori) ?>"><?= $value->nama_kategori ?></a>
+							<?php } ?>
+						</div>
+					</li>
+					<?php if ($this->session->userdata('username') == "") { ?>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pesanan Saya</a>
+							<div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown"><a class="dropdown-item border-0 transition-link" href="#">Pesanan Saya</a></div>
+						</li>
+					<?php } else { ?>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pesanan Saya</a>
+							<div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown"><a class="dropdown-item border-0 transition-link" href="<?= base_url('pesanan') ?>">Keranjang</a></div>
+						</li>
+					<?php } ?>
 				</ul>
-			<?php } ?>
-		</li>
-		<li>
-			<div class="header-icons">
-				<a class="shopping-cart" href="<?= base_url('belanja') ?>"><i class="fas fa-shopping-cart"></i>[<?= $jml_item ?>]</a>
-				<?php if ($this->session->userdata('username') == "") { ?>
-					<a class="logout-bar-icon" href="#"><i class="fas fa-sign-out-alt"></i></a>
-				<?php } else { ?>
-					<a class="logout-bar-icon" href="<?= base_url('pelanggan/logout') ?>"><i class="fas fa-sign-out-alt"></i></a>
-				<?php } ?>
+				<?php $keranjang = $this->cart->contents();
+				$jml_item = 0;
+				foreach ($keranjang as $key => $value) {
+					$jml_item = $jml_item + $value['qty'];
+				} ?>
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link" href="<?= base_url('belanja') ?>"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal">(<?= $jml_item ?>)</small></a></li>
+					<?php
+					if ($this->session->userdata('username') == "") { ?>
+						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/login') ?>"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
+					<?php } else { ?>
+						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/login') ?>"> <i class="fas fa-user me-1 text-gray fw-normal"></i><?= $this->session->userdata('nama_pelanggan'); ?></a></li>
+					<?php } ?>
+					<?php
+					if ($this->session->userdata('username') == "") { ?>
+					<?php } else { ?>
+						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/logout') ?>"> <i class="fa fa-sign-out-alt me-1 text-gray fw-normal"></i>Logout</a></li>
+					<?php } ?>
+				</ul>
 			</div>
-		</li>
-	</ul>
-</nav>
-<div class="mobile-menu"></div>
-<!-- menu end -->
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- end header -->
-
-<!-- search area -->
-<div class="search-area">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<span class="close-btn"><i class="fas fa-window-close"></i></span>
-				<div class="search-bar">
-					<div class="search-bar-tablecell">
-						<h3>Search For:</h3>
-						<input type="text" placeholder="Keywords">
-						<button type="submit">Search <i class="fas fa-search"></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
+		</nav>
 	</div>
-</div>
-<!-- end search area -->
+</header>
