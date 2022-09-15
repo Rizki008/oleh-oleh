@@ -49,7 +49,7 @@
 						</div>
 						<div class="col-lg-6">
 							<label class="form-label text-sm text-uppercase" for="lastName">Password </label>
-							<input class="form-control form-control-lg" type="text" id="lastName" name="password" value="<?= set_value('password') ?>" placeholder="Enter your Password">
+							<input class="form-control form-control-lg" type="password" id="lastName" name="password" value="<?= set_value('password') ?>" placeholder="Enter your Password">
 						</div>
 						<div class="col-lg-12 form-group">
 							<a href="<?= base_url('pelanggan/register') ?>" type="submit" class="btn btn-primary">Registrasi</a>

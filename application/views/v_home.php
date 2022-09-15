@@ -43,8 +43,8 @@
 		<div class="container py-5">
 			<div class="row px-4 px-lg-5">
 				<div class="col-lg-6">
-					<p class="text-muted small text-uppercase mb-2">New Inspiration 2020</p>
-					<h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark" href="#">Browse collections</a>
+					<p class="text-muted small text-uppercase mb-2">New Inspiration 202</p>
+					<h1 class="h2 text-uppercase mb-3">20% Diskon</h1>
 				</div>
 			</div>
 		</div>
@@ -52,15 +52,15 @@
 	<!-- CATEGORIES SECTION-->
 	<section class="pt-5">
 		<header class="text-center">
-			<p class="small text-muted small text-uppercase mb-1">Carefully created collections</p>
-			<h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
+			<p class="small text-muted small text-uppercase mb-1">Koleksi Produk</p>
+			<h2 class="h5 text-uppercase mb-4">Caketgori Produk</h2>
 		</header>
 		<div class="row">
-			<div class="col-md-4"><a class="category-item" href="#"><img class="img-fluid" src="<?= base_url() ?>distribution/img/jeniv.jpeg" alt="" /><strong class="category-item-title"></strong></a>
+			<div class="col-md-4"><a class="category-item" href="#"><img class="img-fluid" src="<?= base_url() ?>distribution/img/jeniv.jpeg" alt="" /></a>
 			</div>
-			<div class="col-md-4"><a class="category-item mb-4" href="#"><img class="img-fluid" src="<?= base_url() ?>distribution/img/ketan.jpg" alt="" /><strong class="category-item-title"></strong></a><a class="category-item" href="#"><img class="img-fluid" src="<?= base_url() ?>distribution/img/ahh.jpg" alt="" /><strong class="category-item-title"></strong></a>
+			<div class="col-md-4"><a class="category-item mb-4" href="#"><img class="img-fluid" src="<?= base_url() ?>distribution/img/ketan.jpg" alt="" /></a><a class="category-item" href="#"><img class="img-fluid" src="<?= base_url() ?>distribution/img/ahh.jpg" alt="" /></a>
 			</div>
-			<div class="col-md-4"><a class="category-item" href="#"><img class="img-fluid" src="<?= base_url() ?>distribution/img/emping.jpeg" alt="" /><strong class="category-item-title"></strong></a>
+			<div class="col-md-4"><a class="category-item" href="#"><img class="img-fluid" src="<?= base_url() ?>distribution/img/emping.jpeg" alt="" /></a>
 			</div>
 		</div>
 	</section>
