@@ -36,7 +36,7 @@
 					if ($this->session->userdata('username') == "") { ?>
 						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/login') ?>"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
 					<?php } else { ?>
-						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/login') ?>"> <i class="fas fa-user me-1 text-gray fw-normal"></i><?= $this->session->userdata('nama_pelanggan'); ?></a></li>
+						<li class="nav-item"><a class="nav-link" href="#"> <i class="fas fa-user me-1 text-gray fw-normal"></i><?= $this->session->userdata('nama_pelanggan'); ?></a></li>
 					<?php } ?>
 					<?php
 					if ($this->session->userdata('username') == "") { ?>

@@ -8,6 +8,7 @@ class Admin extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_admin');
+		$this->load->model('m_transaksi');
 	}
 
 	public function index()
@@ -18,6 +19,7 @@ class Admin extends CI_Controller
 			'total_produk' => $this->m_admin->total_produk(),
 			'total_pembayaran' => $this->m_admin->total_transaksi(),
 			'total_pesanan' => $this->m_admin->total_pesanan(),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'v_admin'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);

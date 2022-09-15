@@ -55,6 +55,14 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-lg-12 grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<h4 class="card-title">Line chart</h4>
+										<canvas id="myChart" style="height:250px"></canvas>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
