@@ -32,9 +32,10 @@
 										<td> <?= $no++ ?> </td>
 										<td> <?= $value->username ?> </td>
 										<td> <?= $value->password ?> </td>
-										<!-- <td> <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#update<?= $value->id_user ?>">Update</button>
-											<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_user ?>">Delete</button>
-										</td> -->
+										<td>
+											<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#update<?= $value->id_pemilik ?>">Update</button>
+											<!-- <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_pemilik ?>">Delete</button> -->
+										</td>
 									</tr>
 								<?php } ?>
 							</tbody>
@@ -44,3 +45,40 @@
 			</div>
 		</div>
 	</div>
+
+	<?php foreach ($pemilik as $key => $value) { ?>
+		<div class="modal fade" id="update<?= $value->id_pemilik ?>">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Edit Akun Pemilik</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<?php
+						echo form_open('admin/update_pemilik/' . $value->id_pemilik);
+						?>
+
+						<div class="form-group">
+							<label>Username</label>
+							<input type="text" name="username" value="<?= $value->username ?>" class="form-control" placeholder="Nama User" required>
+						</div>
+						<div class="form-group">
+							<label>Password</label>
+							<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Nama User" required>
+						</div>
+
+					</div>
+					<div class="modal-footer justify-content-between">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+					<?php
+					echo form_close();
+					?>
+				</div>
+			</div>
+		</div>
+	<?php } ?>

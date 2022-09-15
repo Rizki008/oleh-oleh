@@ -126,6 +126,11 @@ class M_admin extends CI_Model
 		$this->db->order_by('id_pemilik', 'desc');
 		return $this->db->get()->result();
 	}
+	public function update_pemilik($data)
+	{
+		$this->db->where('id_pemilik', $data['id_pemilik']);
+		$this->db->update('pemilik', $data);
+	}
 
 	public function add($data)
 	{

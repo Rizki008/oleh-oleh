@@ -101,7 +101,7 @@ class Admin extends CI_Controller
 		redirect('admin/pelanggan');
 	}
 
-	//user
+	//Pemilik
 	public function pemilik()
 	{
 		$data = array(
@@ -111,6 +111,17 @@ class Admin extends CI_Controller
 			'isi' => 'layout/backend/pemilik/v_pemilik'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
+	}
+	public function update_pemilik($id_pemilik = NULL)
+	{
+		$data = array(
+			'id_pemilik' => $id_pemilik,
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password')
+		);
+		$this->m_admin->update_pemilik($data);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Diupdate');
+		redirect('admin/pemilik');
 	}
 	//admin
 	public function user()
