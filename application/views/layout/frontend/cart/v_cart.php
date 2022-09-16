@@ -27,10 +27,10 @@
 					<table class="table text-nowrap">
 						<thead class="bg-light">
 							<tr>
-								<th class="border-0 p-3" scope="col"> <strong class="text-sm text-uppercase">Product</strong></th>
-								<th class="border-0 p-3" scope="col"> <strong class="text-sm text-uppercase">Price</strong></th>
+								<th class="border-0 p-3" scope="col"> <strong class="text-sm text-uppercase">Produk</strong></th>
+								<th class="border-0 p-3" scope="col"> <strong class="text-sm text-uppercase">Harga</strong></th>
 								<th class="border-0 p-3" scope="col"> <strong class="text-sm text-uppercase">Quantity</strong></th>
-								<th class="border-0 p-3" scope="col"> <strong class="text-sm text-uppercase">Total</strong></th>
+								<th class="border-0 p-3" scope="col"> <strong class="text-sm text-uppercase">Total Harga</strong></th>
 								<th class="border-0 p-3" scope="col"> <strong class="text-sm text-uppercase"></strong></th>
 							</tr>
 						</thead>
@@ -80,8 +80,11 @@
 				<!-- CART NAV-->
 				<div class="bg-light px-4 py-3">
 					<div class="row align-items-center text-center">
-						<div class="col-md-6 mb-3 mb-md-0 text-md-start"><a class="btn btn-link p-0 text-dark btn-sm" href="<?= base_url() ?>"><i class="fas fa-long-arrow-alt-left me-2"> </i>Continue shopping</a></div>
-						<div class="col-md-6 text-md-end"><a class="btn btn-outline-dark btn-sm" href="<?= base_url('belanja/cekout') ?>">Procceed to checkout<i class="fas fa-long-arrow-alt-right ms-2"></i></a></div>
+						<div class="col-md-6 mb-3 mb-md-0 text-md-start"><a class="btn btn-link p-0 text-dark btn-sm" href="<?= base_url() ?>"><i class="fas fa-long-arrow-alt-left me-2"> </i>
+								Lanjutkan Belanja
+							</a></div>
+						<div class="col-md-6 text-md-end"><a class="btn btn-outline-dark btn-sm" href="<?= base_url('belanja/cekout') ?>">
+								Lanjutkan ke pembayaran<i class="fas fa-long-arrow-alt-right ms-2"></i></a></div>
 					</div>
 				</div>
 			</div>
@@ -98,7 +101,7 @@
 								<form action="#">
 									<div class="input-group mb-0">
 										<!-- <input class="form-control" type="text" placeholder="Enter your coupon"> -->
-										<button class="btn btn-dark btn-sm w-100" type="submit"> <i class="fas fa-gift me-2"></i>Update Cart</button>
+										<button class="btn btn-dark btn-sm w-100" type="submit"> <i class="fas fa-gift me-2"></i>Perbarui Keranjang</button>
 									</div>
 								</form>
 							</li>

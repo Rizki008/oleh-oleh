@@ -8,6 +8,7 @@ class Kategori extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_kategori');
+		$this->load->model('m_transaksi');
 	}
 
 	public function index()
@@ -15,6 +16,7 @@ class Kategori extends CI_Controller
 		$data = array(
 			'title' => 'Data Kategori',
 			'kategori' => $this->m_kategori->kategori(),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'layout/backend/kategori/v_kategori'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);

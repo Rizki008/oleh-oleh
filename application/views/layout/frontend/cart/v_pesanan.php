@@ -9,7 +9,7 @@
 				<div class="col-lg-6 text-lg-end">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb justify-content-lg-end mb-0 px-0 bg-light">
-							<li class="breadcrumb-item"><a class="text-dark" href="<?= base_url() ?>">Home</a></li>
+							<li class="breadcrumb-item"><a class="text-dark" href="<?= base_url() ?>">Beranda</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Pesanan</li>
 						</ol>
 					</nav>
@@ -55,11 +55,11 @@
 										<p class="mb-0 small">
 											Rp. <?= number_format($value->total_bayar, 0) ?>
 											<?php if ($value->status_bayar == 0) { ?>
-												<span class="badge badge-warning">Belum Bayar</span>
-											<?php } else { ?>
-												<span class="badge badge-success">Sudah Bayar/Menunggu Konfirmasi</span>
-											<?php } ?>
-										</p>
+										<p class="mb-0 small">Belum Bayar</p>
+									<?php } else if ($value->status_bayar == 1) { ?>
+										<p class="mb-0 small">Sudah Bayar <br> Menunggu Konfirmasi</p>
+									<?php } ?>
+									</p>
 									</td>
 									<td class="p-3 align-middle border-light">
 										<p class="mb-0 small">Rp. <?= number_format($value->ongkir, 0) ?></p>
@@ -87,9 +87,10 @@
 									<td class="p-3 align-middle border-light">
 										<p class="mb-0 small">
 											Rp. <?= number_format($value->total_bayar, 0) ?>
-											<span class="badge badge-warning">Di proses</span>
-											<span class="badge badge-success">Pengemasan</span>
-										</p>
+											<?php if ($value->status_order == 1) { ?>
+										<p class="mb-0 small">Di Proses <br> Pengemasan</p>
+									<?php } ?>
+									</p>
 									</td>
 									<td class="p-3 align-middle border-light">
 										<p class="mb-0 small">Rp. <?= number_format($value->ongkir, 0) ?></p>
@@ -113,17 +114,15 @@
 									<td class="p-3 align-middle border-light">
 										<p class="mb-0 small">
 											Rp. <?= number_format($value->total_bayar, 0) ?>
-											<span class="badge badge-primary">Pengiriman</span>
-										</p>
+											<?php if ($value->status_order == 2) { ?>
+										<p class="mb-0 small">Pengiriman</p>
+									<?php } ?>
+									</p>
 									</td>
 									<td class="p-3 align-middle border-light">
 										<p class="mb-0 small">Rp. <?= number_format($value->ongkir, 0) ?></p>
 									</td>
-									<td><?php if ($value->status_bayar == 1) { ?>
-											<p>Sudah Bayar</p>
-										<?php } else { ?>
-											Belum Bayar
-										<?php } ?>
+									<td>
 										<a class="btn btn-outline-dark" href="#productView<?= $value->id_transaksi ?>" data-bs-toggle="modal"><i class="fas fa-paper-plane"></i></a>
 										<!-- <button class="btn btn-primary btn sm" data-toggle="modal" data-target="#selesai<?= $value->id_transaksi ?>">Diterima</button> -->
 									</td>
@@ -146,18 +145,16 @@
 									<td class="p-3 align-middle border-light">
 										<p class="mb-0 small">
 											Rp. <?= number_format($value->total_bayar, 0) ?>
-											<span class="badge badge-success">Selesai</span>
-										</p>
+											<?php if ($value->status_order == 3) { ?>
+										<p>Selesai</p>
+									<?php } ?>
+									</p>
 									</td>
 									<td class="p-3 align-middle border-light">
 										<p class="mb-0 small">Rp. <?= number_format($value->ongkir, 0) ?></p>
 									</td>
-									<td><?php if ($value->status_bayar == 1) { ?>
-											<p>Sudah Bayar</p>
-										<?php } else { ?>
-											Belum Bayar
-										<?php } ?>
-									</td>
+									<!-- <td>
+									</td> -->
 								</tr>
 							<?php } ?>
 						</tbody>

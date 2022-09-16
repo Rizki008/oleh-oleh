@@ -10,6 +10,7 @@ class Produk extends CI_Controller
 		parent::__construct();
 		$this->load->model('m_produk');
 		$this->load->model('m_kategori');
+		$this->load->model('m_transaksi');
 	}
 
 	public function index()
@@ -17,6 +18,7 @@ class Produk extends CI_Controller
 		$data = array(
 			'title' => 'Data Produk',
 			'produk' => $this->m_produk->produk(),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'layout/backend/produk/v_produk'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
@@ -42,6 +44,7 @@ class Produk extends CI_Controller
 				$data = array(
 					'title' => 'Tambah Produk',
 					'kategori' => $this->m_kategori->kategori(),
+					'grafik' => $this->m_transaksi->grafik(),
 					'error_upload' => $this->upload->display_errors(),
 					'isi' => 'layout/backend/produk/v_add'
 				);
@@ -69,6 +72,7 @@ class Produk extends CI_Controller
 		$data = array(
 			'title' => 'Tambah Produk',
 			'kategori' => $this->m_kategori->kategori(),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'layout/backend/produk/v_add'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
@@ -95,6 +99,7 @@ class Produk extends CI_Controller
 					'title' => 'Update Produk',
 					'kategori' => $this->m_kategori->kategori(),
 					'produk' => $this->m_produk->detail($id_produk),
+					'grafik' => $this->m_transaksi->grafik(),
 					'error_upload' => $this->upload->display_errors(),
 					'isi' => 'layout/backend/produk/v_edit'
 				);
@@ -141,6 +146,7 @@ class Produk extends CI_Controller
 			'title' => 'Update Produk',
 			'kategori' => $this->m_kategori->kategori(),
 			'produk' => $this->m_produk->detail($id_produk),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'layout/backend/produk/v_edit'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);

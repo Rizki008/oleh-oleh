@@ -20,7 +20,7 @@
 	</section>
 	<section class="py-5">
 		<!-- BILLING ADDRESS-->
-		<h2 class="h5 text-uppercase mb-4">Billing details</h2>
+		<h2 class="h5 text-uppercase mb-4">Detail Pembayaran</h2>
 		<div class="row">
 			<div class="col-lg-8">
 				<?php
@@ -67,7 +67,7 @@
 			<div class="col-lg-4">
 				<div class="card border-0 rounded-0 p-lg-4 bg-light">
 					<div class="card-body">
-						<h5 class="text-uppercase mb-4">Your order</h5>
+						<h5 class="text-uppercase mb-4">Orderan Anda</h5>
 						<ul class="list-unstyled mb-0">
 							<li class="d-flex align-items-center justify-content-between"><strong class="small fw-bold">Total Bayar</strong><span class="text-muted small">Rp. <?= number_format($pesanan->total_bayar, 0) ?>.-</span></li>
 							<li class="border-bottom my-2"></li>

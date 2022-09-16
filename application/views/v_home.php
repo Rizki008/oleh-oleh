@@ -43,8 +43,8 @@
 		<div class="container py-5">
 			<div class="row px-4 px-lg-5">
 				<div class="col-lg-6">
-					<p class="text-muted small text-uppercase mb-2">New Inspiration 202</p>
-					<h1 class="h2 text-uppercase mb-3">20% Diskon</h1>
+					<p class="text-muted small text-uppercase mb-2">Dapatkan Diskon Di Hari-hari Tertentu</p>
+					<h1 class="h2 text-uppercase mb-3">Besar Diskon Sampai 50%</h1>
 				</div>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 	<section class="py-5">
 		<header>
 			<p class="small text-muted small text-uppercase mb-1">Produk Pilihan</p>
-			<h2 class="h5 text-uppercase mb-4">Top trending products</h2>
+			<h2 class="h5 text-uppercase mb-4">Produk Paling Laris</h2>
 		</header>
 		<div class="row">
 			<?php if (count($produk) > 0) : ?>
@@ -89,7 +89,7 @@
 									<ul class="mb-0 list-inline">
 										<li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><i class="far fa-eye"></i></a></li>
 										<li class="list-inline-item m-0 p-0">
-											<button type="submit" class="btn btn-sm btn-dark" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->diskon > 0) ? ($value->harga - $value->diskon) : $value->harga ?>" data-id="<?= $value->id_produk ?>">Add to cart</button>
+											<button type="submit" class="btn btn-sm btn-dark" data-name="<?= $value->nama_produk ?>" data-price="<?= ($value->diskon > 0) ? ($value->harga - $value->diskon) : $value->harga ?>" data-id="<?= $value->id_produk ?>">Tambah Ke keranjang</button>
 											<!-- <a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a> -->
 										</li>
 										<!-- <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a></li> -->
@@ -118,8 +118,8 @@
 								<use xlink:href="#helpline-24h-1"> </use>
 							</svg>
 							<div class="text-start ms-3">
-								<h6 class="text-uppercase mb-1">24 x 7 service</h6>
-								<p class="text-sm mb-0 text-muted">Free shipping worldwide</p>
+								<h6 class="text-uppercase mb-1">24 x 7 Pelayanan</h6>
+								<p class="text-sm mb-0 text-muted">Produk Selalu Segar dan Terbaru</p>
 							</div>
 						</div>
 					</div>
@@ -131,8 +131,8 @@
 								<use xlink:href="#label-tag-1"> </use>
 							</svg>
 							<div class="text-start ms-3">
-								<h6 class="text-uppercase mb-1">Festivaloffers</h6>
-								<p class="text-sm mb-0 text-muted">Free shipping worldwide</p>
+								<h6 class="text-uppercase mb-1">Dapatkan Potongan Diskon</h6>
+								<p class="text-sm mb-0 text-muted">Sampai 50%</p>
 							</div>
 						</div>
 					</div>

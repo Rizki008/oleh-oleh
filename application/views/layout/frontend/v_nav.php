@@ -31,17 +31,17 @@
 					$jml_item = $jml_item + $value['qty'];
 				} ?>
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item"><a class="nav-link" href="<?= base_url('belanja') ?>"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Cart<small class="text-gray fw-normal">(<?= $jml_item ?>)</small></a></li>
+					<li class="nav-item"><a class="nav-link" href="<?= base_url('belanja') ?>"> <i class="fas fa-dolly-flatbed me-1 text-gray"></i>Keranjang<small class="text-gray fw-normal">(<?= $jml_item ?>)</small></a></li>
 					<?php
 					if ($this->session->userdata('username') == "") { ?>
-						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/login') ?>"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Login</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/login') ?>"> <i class="fas fa-user me-1 text-gray fw-normal"></i>Masuk</a></li>
 					<?php } else { ?>
 						<li class="nav-item"><a class="nav-link" href="#"> <i class="fas fa-user me-1 text-gray fw-normal"></i><?= $this->session->userdata('nama_pelanggan'); ?></a></li>
 					<?php } ?>
 					<?php
 					if ($this->session->userdata('username') == "") { ?>
 					<?php } else { ?>
-						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/logout') ?>"> <i class="fa fa-sign-out-alt me-1 text-gray fw-normal"></i>Logout</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?= base_url('pelanggan/logout') ?>"> <i class="fa fa-sign-out-alt me-1 text-gray fw-normal"></i>Keluar</a></li>
 					<?php } ?>
 				</ul>
 			</div>

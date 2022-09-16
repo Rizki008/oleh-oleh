@@ -19,6 +19,7 @@ class Transaksi extends CI_Controller
 			'diproses' => $this->m_pesanan_masuk->pesanan_diproses(),
 			'dikirim' => $this->m_pesanan_masuk->pesanan_dikirim(),
 			'selesai' => $this->m_pesanan_masuk->pesanan_selesai(),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'layout/backend/transaksi/v_transaksi'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);

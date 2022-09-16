@@ -35,6 +35,7 @@ class Admin extends CI_Controller
 			$data = array(
 				'title' => 'Setting',
 				'lokasi' => $this->m_admin->data_lokasi(),
+				'grafik' => $this->m_transaksi->grafik(),
 				'isi' => 'layout/backend/lokasi/v_lokasi_toko'
 			);
 			$this->load->view('layout/backend/v_wrapper', $data, FALSE);
@@ -56,6 +57,7 @@ class Admin extends CI_Controller
 		$data = array(
 			'title' => 'Data Pelanggan',
 			'pelanggan' => $this->m_admin->pelanggan(),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'layout/backend/pelanggan/v_pelanggan'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
@@ -110,6 +112,7 @@ class Admin extends CI_Controller
 			'title' => 'Data Pemilik',
 			'user' => $this->m_admin->pemilik(),
 			'pemilik' => $this->m_admin->pemilik(),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'layout/backend/pemilik/v_pemilik'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);
@@ -132,6 +135,7 @@ class Admin extends CI_Controller
 			'title' => 'Data Admin',
 			'user' => $this->m_admin->user(),
 			'pemilik' => $this->m_admin->pemilik(),
+			'grafik' => $this->m_transaksi->grafik(),
 			'isi' => 'layout/backend/user/v_user'
 		);
 		$this->load->view('layout/backend/v_wrapper', $data, FALSE);

@@ -142,7 +142,7 @@
             </section>
             <section class="py-5">
                 <!-- BILLING ADDRESS-->
-                <h2 class="h5 text-uppercase mb-4">Billing details</h2>
+                <h2 class="h5 text-uppercase mb-4">Detail Pembelian</h2>
                 <?php
                 echo validation_errors('<div class="alert alert-warning alert-dismissible">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -161,43 +161,43 @@
                         <form action="#">
                             <div class="row gy-3">
                                 <div class="col-lg-6">
-                                    <label class="form-label text-sm text-uppercase" for="firstName">First name </label>
+                                    <label class="form-label text-sm text-uppercase" for="firstName">Nama Pelanggan </label>
                                     <input class="form-control form-control-lg" type="text" id="firstName" name="id_pelanggan" value="<?= $this->session->userdata('nama_pelanggan'); ?>" readonly placeholder="Enter your first name">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label class="form-label text-sm text-uppercase" for="phone">Phone number </label>
+                                    <label class="form-label text-sm text-uppercase" for="phone">No Telephone </label>
                                     <input class="form-control form-control-lg" type="tel" id="phone" name="no_tlpn" value="<?= $this->session->userdata('no_tlpn'); ?>" readonly placeholder="e.g. +02 245354745">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label class="form-label text-sm text-uppercase" for="company">Company name (optional) </label>
+                                    <label class="form-label text-sm text-uppercase" for="company">Kode Post </label>
                                     <input class="form-control form-control-lg" type="text" id="company" name="kode_pos" value="<?= $this->session->userdata('kode_pos'); ?>" readonly placeholder="Your company name">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label class="form-label text-sm text-uppercase" for="company">Company name (optional) </label>
+                                    <label class="form-label text-sm text-uppercase" for="company">Alamat Lengkap </label>
                                     <input class="form-control form-control-lg" type="text" id="company" name="alamat" value="<?= $this->session->userdata('alamat'); ?>" readonly placeholder="Your company name">
                                 </div>
                                 <div class="col-lg-6 form-group">
-                                    <label class="form-label text-sm text-uppercase" for="country">Country</label>
+                                    <label class="form-label text-sm text-uppercase" for="country">Provinsi</label>
                                     <select class="form-control" id="country" name="provinsi" data-customclass="form-control form-control-lg rounded-0">
                                     </select>
                                 </div>
                                 <div class="col-lg-6 form-group">
-                                    <label class="form-label text-sm text-uppercase" for="country">Country</label>
+                                    <label class="form-label text-sm text-uppercase" for="country">Kota</label>
                                     <select class="form-control" id="country" name="kota" data-customclass="form-control form-control-lg rounded-0">
                                     </select>
                                 </div>
                                 <div class="col-lg-6 form-group">
-                                    <label class="form-label text-sm text-uppercase" for="country">Country</label>
+                                    <label class="form-label text-sm text-uppercase" for="country">Expedisi</label>
                                     <select class="form-control" id="country" name="expedisi" data-customclass="form-control form-control-lg rounded-0">
                                     </select>
                                 </div>
                                 <div class="col-lg-6 form-group">
-                                    <label class="form-label text-sm text-uppercase" for="country">Country</label>
+                                    <label class="form-label text-sm text-uppercase" for="country">Paket</label>
                                     <select class="form-control" id="country" name="paket" data-customclass="form-control form-control-lg rounded-0">
                                     </select>
                                 </div>
                                 <div class="col-lg-12 form-group">
-                                    <button class="btn btn-dark" type="submit">Place order</button>
+                                    <button class="btn btn-dark" type="submit">Proses Pembelian</button>
                                 </div>
                             </div>
                         </form>
@@ -215,11 +215,11 @@
                                     $total_berat =  $total_berat + $berat;
                                 ?>
                                 <?php } ?>
-                                <h5 class="text-uppercase mb-4">Your order</h5>
+                                <h5 class="text-uppercase mb-4">Orderan Anda</h5>
                                 <ul class="list-unstyled mb-0">
                                     <li class="d-flex align-items-center justify-content-between"><strong class="small fw-bold">Subtotal</strong><span class="text-muted small">Rp. <?php echo $this->cart->format_number($this->cart->total(), 0) ?></span></li>
                                     <li class="border-bottom my-2"></li>
-                                    <li class="d-flex align-items-center justify-content-between"><strong class="small fw-bold">Shipping</strong><span class="text-muted small ongkir" id="ongkir"><label class="ongkir" id="ongkir"></label></span></li>
+                                    <li class="d-flex align-items-center justify-content-between"><strong class="small fw-bold">Ongkos Kirim</strong><span class="text-muted small ongkir" id="ongkir"><label class="ongkir" id="ongkir"></label></span></li>
                                     <li class="border-bottom my-2"></li>
                                     <li class="d-flex align-items-center justify-content-between"><strong class="small fw-bold">Berat</strong><span class="text-muted smal"><?= $total_berat ?> Gr</span></li>
                                     <li class="border-bottom my-2"></li>
@@ -252,25 +252,25 @@
             <div class="container py-4">
                 <div class="row py-5">
                     <div class="col-md-4 mb-3 mb-md-0">
-                        <h6 class="text-uppercase mb-3">Customer services</h6>
+                        <h6 class="text-uppercase mb-3">Pelayanan</h6>
                         <ul class="list-unstyled mb-0">
-                            <li><a class="footer-link" href="#!">Help &amp; Contact Us</a></li>
-                            <li><a class="footer-link" href="#!">Returns &amp; Refunds</a></li>
+                            <li><a class="footer-link" href="#!">Bantuan &amp; +62 8578-2918-2019</a></li>
+                            <!-- <li><a class="footer-link" href="#!">Returns &amp; Refunds</a></li>
                             <li><a class="footer-link" href="#!">Online Stores</a></li>
-                            <li><a class="footer-link" href="#!">Terms &amp; Conditions</a></li>
+                            <li><a class="footer-link" href="#!">Terms &amp; Conditions</a></li> -->
                         </ul>
                     </div>
                     <div class="col-md-4 mb-3 mb-md-0">
-                        <h6 class="text-uppercase mb-3">Company</h6>
+                        <h6 class="text-uppercase mb-3">Alamat</h6>
                         <ul class="list-unstyled mb-0">
-                            <li><a class="footer-link" href="#!">What We Do</a></li>
-                            <li><a class="footer-link" href="#!">Available Services</a></li>
+                            <li><a class="footer-link" href="#!">Kuningan Jl. Siliwangi No.06</a></li>
+                            <!-- <li><a class="footer-link" href="#!">Available Services</a></li>
                             <li><a class="footer-link" href="#!">Latest Posts</a></li>
-                            <li><a class="footer-link" href="#!">FAQs</a></li>
+                            <li><a class="footer-link" href="#!">FAQs</a></li> -->
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <h6 class="text-uppercase mb-3">Social media</h6>
+                        <h6 class="text-uppercase mb-3">Sosial media</h6>
                         <ul class="list-unstyled mb-0">
                             <li><a class="footer-link" href="#!">Twitter</a></li>
                             <li><a class="footer-link" href="#!">Instagram</a></li>
@@ -282,10 +282,10 @@
                 <div class="border-top pt-4" style="border-color: #1d1d1d !important">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start">
-                            <p class="small text-muted mb-0">&copy; 2021 All rights reserved.</p>
+                            <p class="small text-muted mb-0">&copy; 2022 All rights reserved.</p>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            <p class="small text-muted mb-0">Template designed by <a class="text-white reset-anchor" href="https://bootstrapious.com/p/boutique-bootstrap-e-commerce-template">Bootstrapious</a></p>
+                            <p class="small text-muted mb-0">Toko Ipeng <a class="text-white reset-anchor" href="https://bootstrapious.com/p/boutique-bootstrap-e-commerce-template">Pusat Oleh-Oleh</a></p>
                             <!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
                         </div>
                     </div>
