@@ -21,6 +21,9 @@
 									<th> # </th>
 									<th> Username </th>
 									<th> Password </th>
+									<th> No Telephone </th>
+									<th> Kode Post </th>
+									<th> Alamat </th>
 									<!-- <th> Action </th> -->
 								</tr>
 							</thead>
@@ -32,6 +35,9 @@
 										<td> <?= $no++ ?> </td>
 										<td> <?= $value->username ?> </td>
 										<td> <?= $value->password ?> </td>
+										<td> <?= $value->no_tlpn ?> </td>
+										<td> <?= $value->kode_post ?> </td>
+										<td> <?= $value->alamat ?> </td>
 										<td>
 											<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#update<?= $value->id_pemilik ?>">Update</button>
 											<!-- <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_pemilik ?>">Delete</button> -->
@@ -67,7 +73,19 @@
 						</div>
 						<div class="form-group">
 							<label>Password</label>
-							<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Nama User" required>
+							<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Password" required>
+						</div>
+						<div class="form-group">
+							<label>No Telephone</label>
+							<input type="number" name="no_tlpn" value="<?= $value->no_tlpn ?>" class="form-control" placeholder="No Telephone" required>
+						</div>
+						<div class="form-group">
+							<label>Kode Post</label>
+							<input type="number" name="kode_post" value="<?= $value->kode_post ?>" class="form-control" placeholder="Kode Post" required>
+						</div>
+						<div class="form-group">
+							<label>Alamat</label>
+							<input type="text" name="alamat" value="<?= $value->alamat ?>" class="form-control" placeholder="Alamat" required>
 						</div>
 
 					</div>
