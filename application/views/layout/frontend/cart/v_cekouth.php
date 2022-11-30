@@ -221,7 +221,7 @@
                                     <li class="border-bottom my-2"></li>
                                     <li class="d-flex align-items-center justify-content-between"><strong class="small fw-bold">Ongkos Kirim</strong><span class="text-muted small ongkir" id="ongkir"><label class="ongkir" id="ongkir"></label></span></li>
                                     <li class="border-bottom my-2"></li>
-                                    <li class="d-flex align-items-center justify-content-between"><strong class="small fw-bold">Berat</strong><span class="text-muted smal"><?= $total_berat ?> Gr</span></li>
+                                    <li class="d-flex align-items-center justify-content-between"><strong class="small fw-bold">Berat</strong><span class="text-muted smal"><?= $total_berat ?> Kg</span></li>
                                     <li class="border-bottom my-2"></li>
                                     <li class="d-flex align-items-center justify-content-between"><strong class="text-uppercase small fw-bold">Total</strong><span class="total order-total" id="total_bayar"><label class="total order-total" id="total_bayar"></label></span></li>
                                 </ul>

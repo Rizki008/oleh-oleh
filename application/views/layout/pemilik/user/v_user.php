@@ -13,7 +13,7 @@
 			<div class="col-lg-12 stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="card-title">Data User</h4>
+						<h4 class="card-title">Data Admin</h4>
 						<p class="card-description"> <button type="button" data-toggle="modal" data-target="#add" class="btn btn-primary">Add User</button>
 						</p>
 						<table class="table table-bordered">

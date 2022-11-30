@@ -121,8 +121,12 @@ class Admin extends CI_Controller
 	{
 		$data = array(
 			'id_pemilik' => $id_pemilik,
+			'nama_pemilik' => $this->input->post('nama_pemilik'),
 			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')
+			'password' => $this->input->post('password'),
+			'no_tlpn' => $this->input->post('no_tlpn'),
+			'kode_post' => $this->input->post('kode_post'),
+			'alamat' => $this->input->post('alamat'),
 		);
 		$this->m_admin->update_pemilik($data);
 		$this->session->set_flashdata('pesan', 'Data Berhasil Diupdate');
@@ -144,8 +148,12 @@ class Admin extends CI_Controller
 	public function add()
 	{
 		$data = array(
+			'nama_admin' => $this->input->post('nama_admin'),
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
+			'no_tlpn' => $this->input->post('no_tlpn'),
+			'kode_post' => $this->input->post('kode_post'),
+			'alamat' => $this->input->post('alamat'),
 		);
 		$this->m_admin->add($data);
 		$this->session->set_flashdata('pesan', 'Data Berasil Ditambah');
@@ -156,8 +164,12 @@ class Admin extends CI_Controller
 	{
 		$data = array(
 			'id_user' => $id_user,
+			'nama_admin' => $this->input->post('nama_admin'),
 			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')
+			'password' => $this->input->post('password'),
+			'no_tlpn' => $this->input->post('no_tlpn'),
+			'kode_post' => $this->input->post('kode_post'),
+			'alamat' => $this->input->post('alamat'),
 		);
 		$this->m_admin->update_user($data);
 		$this->session->set_flashdata('pesan', 'Data Berhasil Diupdate');

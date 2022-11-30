@@ -28,7 +28,7 @@
 								<?php
 								$no = 1;
 								foreach ($kategori as $key => $value) { ?>
-									<?php if ($value->nama_kategori == 'minuman') { ?>
+									<?php if ($value->nama_kategori == 'Minuman') { ?>
 										<tr class="table-info">
 											<td> <?= $no++ ?> </td>
 											<td> <?= $value->nama_kategori ?> </td>
@@ -36,7 +36,15 @@
 												<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_kategori ?>">Delete</button>
 											</td>
 										</tr>
-									<?php } elseif ($value->nama_kategori == 'makanan') { ?>
+									<?php } elseif ($value->nama_kategori == 'Makanan') { ?>
+										<tr class="table-success">
+											<td> <?= $no++ ?> </td>
+											<td> <?= $value->nama_kategori ?> </td>
+											<td> <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#update<?= $value->id_kategori ?>">Update</button>
+												<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_kategori ?>">Delete</button>
+											</td>
+										</tr>
+									<?php } elseif ($value->nama_kategori == 'Makanan Ringan') { ?>
 										<tr class="table-success">
 											<td> <?= $no++ ?> </td>
 											<td> <?= $value->nama_kategori ?> </td>

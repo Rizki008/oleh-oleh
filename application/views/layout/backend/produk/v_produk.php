@@ -1,11 +1,11 @@
 <div class="main-panel">
 	<div class="content-wrapper">
 		<div class="page-header">
-			<h3 class="page-title"> Basic Tables </h3>
+			<h3 class="page-title"> Data Produk </h3>
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Tables</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+					<li class="breadcrumb-item active" aria-current="page">Data Produk</li>
 				</ol>
 			</nav>
 		</div>
@@ -13,7 +13,7 @@
 			<div class="col-lg-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="card-title">Striped Table</h4>
+						<h4 class="card-title">Data Produk</h4>
 						<p class="card-description"> <a href="<?= base_url('produk/add') ?>" class="btn btn-primary">Tambah Produk</a></code>
 						</p>
 						<table class="table table-striped">

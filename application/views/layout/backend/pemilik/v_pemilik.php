@@ -19,8 +19,12 @@
 							<thead>
 								<tr>
 									<th> # </th>
+									<th> Nama Pemilik</th>
 									<th> Username </th>
 									<th> Password </th>
+									<th> No Telephone </th>
+									<th> Kode Pos </th>
+									<th> Alamat </th>
 									<!-- <th> Action </th> -->
 								</tr>
 							</thead>
@@ -30,8 +34,12 @@
 								foreach ($pemilik as $key => $value) { ?>
 									<tr class="table-info">
 										<td> <?= $no++ ?> </td>
+										<td> <?= $value->nama_pemilik ?> </td>
 										<td> <?= $value->username ?> </td>
 										<td> <?= $value->password ?> </td>
+										<td> <?= $value->no_tlpn ?> </td>
+										<td> <?= $value->kode_post ?> </td>
+										<td> <?= $value->alamat ?> </td>
 										<td>
 											<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#update<?= $value->id_pemilik ?>">Update</button>
 											<!-- <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_pemilik ?>">Delete</button> -->
@@ -60,6 +68,9 @@
 						<?php
 						echo form_open('admin/update_pemilik/' . $value->id_pemilik);
 						?>
+						<div class="form-group">
+							<label>Nama Pemilik</label>
+							<input type="text" name="nama_pemilik" value="<?= $value->nama_pemilik ?>" class="form-control" placeholder="Nama Pemilik" required>
 
 						<div class="form-group">
 							<label>Username</label>
@@ -67,7 +78,19 @@
 						</div>
 						<div class="form-group">
 							<label>Password</label>
-							<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Nama User" required>
+							<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Password" required>
+						</div>
+						<div class="form-group">
+							<label>No Telephone</label>
+							<input type="number" name="no_tlpn" value="<?= $value->no_tlpn ?>" class="form-control" placeholder="No Telephone" required>
+						</div>
+						<div class="form-group">
+							<label>Kode Post</label>
+							<input type="number" name="kode_post" value="<?= $value->kode_post ?>" class="form-control" placeholder="Kode Post" required>
+						</div>
+						<div class="form-group">
+							<label>Alamat</label>
+							<input type="text" name="alamat" value="<?= $value->alamat ?>" class="form-control" placeholder="Alamat" required>
 						</div>
 
 					</div>

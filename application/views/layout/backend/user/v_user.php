@@ -13,15 +13,19 @@
 			<div class="col-lg-12 stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="card-title">Data User</h4>
-						<p class="card-description"> <button type="button" data-toggle="modal" data-target="#add" class="btn btn-primary">Add User</button>
+
+						<p class="card-description"> <button type="button" data-toggle="modal" data-target="#add" class="btn btn-primary">Tambah Admin</button>
 						</p>
 						<table class="table table-bordered">
 							<thead>
 								<tr>
 									<th> # </th>
+									<th> Nama Admin </th>
 									<th> Username </th>
 									<th> Password </th>
+									<th> No Telephone </th>
+									<th> Kode Pos </th>
+									<th> Alamat </th>
 									<th> Action </th>
 								</tr>
 							</thead>
@@ -31,8 +35,12 @@
 								foreach ($user as $key => $value) { ?>
 									<tr class="table-info">
 										<td> <?= $no++ ?> </td>
+										<td> <?= $value->nama_admin ?> </td>
 										<td> <?= $value->username ?> </td>
 										<td> <?= $value->password ?> </td>
+										<td> <?= $value->no_tlpn ?> </td>
+										<td> <?= $value->kode_post ?> </td>
+										<td> <?= $value->alamat ?> </td>
 										<td> <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#update<?= $value->id_user ?>">Update</button>
 											<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_user ?>">Delete</button>
 										</td>
@@ -60,7 +68,10 @@
 					<?php
 					echo form_open('admin/add');
 					?>
-
+					<div class="form-group">
+						<label>Nama Admin</label>
+						<input type="text" name="nama_admin" class="form-control" placeholder="Nama Admin" required>
+					</div>
 					<div class="form-group">
 						<label>Username</label>
 						<input type="text" name="username" class="form-control" placeholder="Nama User" required>
@@ -68,6 +79,18 @@
 					<div class="form-group">
 						<label>Password</label>
 						<input type="password" name="password" class="form-control" placeholder="Password" required>
+					</div>
+					<div class="form-group">
+						<label>No Telephone</label>
+						<input type="number" name="no_tlpn" class="form-control" placeholder="No Telephone" required>
+					</div>
+					<div class="form-group">
+						<label>Kode Post</label>
+						<input type="number" name="kode_post" class="form-control" placeholder="Kode Post" required>
+					</div>
+					<div class="form-group">
+						<label>Alamat</label>
+						<input type="text" name="alamat" class="form-control" placeholder="Alamat" required>
 					</div>
 
 				</div>
@@ -98,14 +121,29 @@
 						<?php
 						echo form_open('admin/update/' . $value->id_user);
 						?>
-
+						<div class="form-group">
+							<label>Nama Admin</label>
+							<input type="text" name="nama_admin" value="<?= $value->nama_admin ?>" class="form-control" placeholder="Nama Admin" required>
+						</div>
 						<div class="form-group">
 							<label>Username</label>
 							<input type="text" name="username" value="<?= $value->username ?>" class="form-control" placeholder="Nama User" required>
 						</div>
 						<div class="form-group">
 							<label>Password</label>
-							<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Nama User" required>
+							<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Password" required>
+						</div>
+						<div class="form-group">
+							<label>No Telphone</label>
+							<input type="number" name="no_tlpn" value="<?= $value->no_tlpn ?>" class="form-control" placeholder="No Telephone" required>
+						</div>
+						<div class="form-group">
+							<label>Kode Post</label>
+							<input type="number" name="kode_post" value="<?= $value->kode_post ?>" class="form-control" placeholder="Kode Post" required>
+						</div>
+						<div class="form-group">
+							<label>Alamat</label>
+							<input type="text" name="alamat" value="<?= $value->alamat ?>" class="form-control" placeholder="Alamat" required>
 						</div>
 
 					</div>

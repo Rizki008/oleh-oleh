@@ -39,7 +39,7 @@
 </div>
 <!-- HERO SECTION-->
 <div class="container">
-	<section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(<?= base_url() ?>distribution/img/opak.jpg)">
+	<section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(<?= base_url() ?>distribution/img/ks.png)">
 		<div class="container py-5">
 			<div class="row px-4 px-lg-5">
 				<div class="col-lg-6">
@@ -84,7 +84,7 @@
 						?>
 						<div class="product text-center">
 							<div class="position-relative mb-3">
-								<div class="badge text-white bg-"></div><a class="d-block" href="detail.html"><img class="img-fluid w-100" src="<?= base_url('assets/gambar/' . $value->gambar) ?>" alt="<?= $value->nama_produk ?>"></a>
+								<div class="badge text-white bg-"></div><a class="d-block" href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><img class="img-fluid w-100" src="<?= base_url('assets/gambar/' . $value->gambar) ?>" alt="<?= $value->nama_produk ?>"></a>
 								<div class="product-overlay">
 									<ul class="mb-0 list-inline">
 										<li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><i class="far fa-eye"></i></a></li>
@@ -97,7 +97,7 @@
 								</div>
 							</div>
 							<h6> <a class="reset-anchor" href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><?= $value->nama_produk ?></a></h6>
-							<p class="small text-muted">Rp. <?= number_format($value->harga - $value->diskon, 0) ?></p>
+							<p class="small text-muted">Rp. <?= number_format($value->harga - $value->diskon, 0) ?> &nbsp;&nbsp;Stock : <?= $value->stock ?></p>
 						</div>
 						<!-- <p class="product-price"><span>Berat <?= $value->berat ?> <?= $value->product_unit ?></span>Rp. <?= number_format($value->harga - $value->diskon, 0) ?> </p> -->
 						<?php echo form_close() ?>

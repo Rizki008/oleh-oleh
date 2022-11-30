@@ -14,7 +14,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title">Data Pelanggan</h4>
-						<p class="card-description"> <button type="button" data-toggle="modal" data-target="#add" class="btn btn-primary">Tambah User</button>
+						<p class="card-description"> <button type="button" data-toggle="modal" data-target="#add" class="btn btn-primary">Tambah Pelanggan</button>
 						</p>
 						<table class="table table-bordered">
 							<thead>

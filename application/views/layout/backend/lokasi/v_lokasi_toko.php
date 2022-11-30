@@ -38,7 +38,7 @@
                             <input type="text" class="form-control" id="exampleInputPassword4" name="nama_toko" value="<?= $lokasi->nama_toko ?>" placeholder="Nama Toko">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputCity1">City</label>
+                            <label for="exampleInputCity1">Alamat</label>
                             <input type="text" class="form-control" id="exampleInputCity1" name="alamat" value="<?= $lokasi->alamat ?>" placeholder="Location">
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
