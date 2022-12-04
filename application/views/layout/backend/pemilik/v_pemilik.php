@@ -72,36 +72,36 @@
 							<label>Nama Pemilik</label>
 							<input type="text" name="nama_pemilik" value="<?= $value->nama_pemilik ?>" class="form-control" placeholder="Nama Pemilik" required>
 
-						<div class="form-group">
-							<label>Username</label>
-							<input type="text" name="username" value="<?= $value->username ?>" class="form-control" placeholder="Nama User" required>
-						</div>
-						<div class="form-group">
-							<label>Password</label>
-							<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Password" required>
-						</div>
-						<div class="form-group">
-							<label>No Telephone</label>
-							<input type="number" name="no_tlpn" value="<?= $value->no_tlpn ?>" class="form-control" placeholder="No Telephone" required>
-						</div>
-						<div class="form-group">
-							<label>Kode Post</label>
-							<input type="number" name="kode_post" value="<?= $value->kode_post ?>" class="form-control" placeholder="Kode Post" required>
-						</div>
-						<div class="form-group">
-							<label>Alamat</label>
-							<input type="text" name="alamat" value="<?= $value->alamat ?>" class="form-control" placeholder="Alamat" required>
-						</div>
+							<div class="form-group">
+								<label>Username</label>
+								<input type="text" name="username" value="<?= $value->username ?>" class="form-control" placeholder="Nama User" required>
+							</div>
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" name="password" value="<?= $value->password ?>" class="form-control" placeholder="Password" required>
+							</div>
+							<div class="form-group">
+								<label>No Telephone</label>
+								<input type="number" name="no_tlpn" value="<?= $value->no_tlpn ?>" class="form-control" placeholder="No Telephone" required>
+							</div>
+							<div class="form-group">
+								<label>Kode Post</label>
+								<input type="number" name="kode_post" value="<?= $value->kode_post ?>" class="form-control" placeholder="Kode Post" required>
+							</div>
+							<div class="form-group">
+								<label>Alamat</label>
+								<input type="text" name="alamat" value="<?= $value->alamat ?>" class="form-control" placeholder="Alamat" required>
+							</div>
 
+						</div>
+						<div class="modal-footer justify-content-between">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Save</button>
+						</div>
+						<?php
+						echo form_close();
+						?>
 					</div>
-					<div class="modal-footer justify-content-between">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Save</button>
-					</div>
-					<?php
-					echo form_close();
-					?>
 				</div>
 			</div>
-		</div>
-	<?php } ?>
+		<?php } ?>

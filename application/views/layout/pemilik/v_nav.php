@@ -13,6 +13,7 @@
 				<a class="nav-link" href="<?= base_url('laporan') ?>">
 					<span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
 					<span class="menu-title">Laporan Penjualan</span>
+
 					<!-- <i class="menu-arrow"></i> -->
 				</a>
 				<!-- <div class="collapse" id="ui-basic-dua">
