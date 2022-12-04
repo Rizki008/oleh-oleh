@@ -89,9 +89,9 @@ class Pelanggan extends CI_Controller
 	public function add_alamat()
 	{
 		$this->form_validation->set_rules('nama2', 'Nama Pelanggan', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-		$this->form_validation->set_rules('no_tlpn', 'No Tlpn', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-		$this->form_validation->set_rules('kode_post', 'Kode Pos', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-		$this->form_validation->set_rules('alamat', 'Alamat', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('no_tlpn2', 'No Tlpn', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('kode_post2', 'Kode Pos', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('alamat2', 'Alamat', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(

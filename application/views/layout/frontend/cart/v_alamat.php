@@ -54,7 +54,7 @@
 						</div>
 						<div class="col-lg-6">
 							<label class="form-label text-sm text-uppercase" for="firstName">Kode Pos </label>
-							<input class="form-control form-control-lg" type="text" name="kode_post" id="kode_post" placeholder="Enter your Zip/pos">
+							<input class="form-control form-control-lg" type="text" name="kode_post2" id="kode_post2" placeholder="Enter your Zip/pos">
 						</div>
 						<div class="col-lg-6">
 							<label class="form-label text-sm text-uppercase" for="firstName">Alamat </label>
