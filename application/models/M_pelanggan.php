@@ -21,6 +21,11 @@ class M_pelanggan extends CI_Model
 	{
 		$this->db->insert('pelanggan', $data);
 	}
+
+	public function insert_alamat($data)
+	{
+		$this->db->insert('alamat', $data);
+	}
 }
 
 /* End of file M_pelanggan.php */
