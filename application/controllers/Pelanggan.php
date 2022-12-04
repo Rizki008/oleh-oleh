@@ -85,4 +85,31 @@ class Pelanggan extends CI_Controller
 	{
 		$this->pelanggan_login->logout();
 	}
+
+	public function add_alamat()
+	{
+		$this->form_validation->set_rules('nama2', 'Nama Pelanggan', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('no_tlpn', 'No Tlpn', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('kode_post', 'Kode Pos', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		$this->form_validation->set_rules('alamat', 'Alamat', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+
+		if ($this->form_validation->run() == FALSE) {
+			$data = array(
+				'title' => 'Alamat Baru',
+				'isi' => 'layout/frontend/cart/v_alamat'
+			);
+			$this->load->view('layout/frontend/v_wrapper', $data, FALSE);
+		} else {
+			$data = array(
+				'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+				'nama2' => $this->input->post('nama2'),
+				'no_tlpn2' => $this->input->post('no_tlpn2'),
+				'kode_post2' => $this->input->post('kode_post2'),
+				'alamat2' => $this->input->post('alamat2'),
+			);
+			$this->m_pelanggan->insert_alamat($data);
+			$this->session->set_flashdata('pesan', 'Alamat Berhasil Ditambah');
+			redirect('belanja/cekout');
+		}
+	}
 }
