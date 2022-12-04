@@ -29,4 +29,13 @@ class M_lokasi_ongkir extends CI_Model
 		$this->db->where('id_lokasi', $data);
 		$this->db->delete('lokasi');
 	}
+
+	public function alamat()
+	{
+		$this->db->select('*');
+		$this->db->from('alamat');
+		$this->db->join('pelanggan', 'pelanggan.id_pelanggan = alamat.id_pelanggan', 'left');
+		$this->db->where('pelanggan.id_pelanggan', $this->session->userdata('id_pelanggan'));
+		return $this->db->get()->result();
+	}
 }
