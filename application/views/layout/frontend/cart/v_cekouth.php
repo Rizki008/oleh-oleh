@@ -141,8 +141,9 @@
                 </div>
             </section>
             <section class="py-5">
-                <!-- BILLING ADDRESS-->
+                <!-- BILLING ADDRESS--><a href="<?= base_url('pelanggan/add_alamat') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah alamat Lain</a>
                 <h2 class="h5 text-uppercase mb-4">Detail Pembelian</h2>
+
                 <?php
                 echo validation_errors('<div class="alert alert-warning alert-dismissible">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -160,6 +161,7 @@
                     <div class="col-lg-8">
                         <form action="#">
                             <div class="row gy-3">
+
                                 <div class="col-lg-6">
                                     <label class="form-label text-sm text-uppercase" for="firstName">Nama Pelanggan </label>
                                     <input class="form-control form-control-lg" type="text" id="firstName" name="id_pelanggan" value="<?= $this->session->userdata('nama_pelanggan'); ?>" readonly placeholder="Enter your first name">
@@ -176,6 +178,37 @@
                                     <label class="form-label text-sm text-uppercase" for="company">Alamat Lengkap </label>
                                     <input class="form-control form-control-lg" type="text" id="company" name="alamat" value="<?= $this->session->userdata('alamat'); ?>" readonly placeholder="Your company name">
                                 </div>
+                                <br>
+                                <br>
+                                <!-- <h5>ALAMAT LAINNYA</h5> -->
+                                <div class="col-lg-12">
+                                    <label class="form-label text-sm text-uppercase" for="firstName">Alamat Lainnya</label>
+                                    <select class="form-control" id="country" name="alamat2" data-customclass="form-control form-control-lg rounded-0">
+                                        <option value="">---Pilih Alamat---</option>
+                                        <option value="alamat2">Alamat Lainnya</option>
+                                    </select>
+                                </div>
+                                <?php foreach ($alamat as $key => $value) { ?>
+                                    <div class="col-lg-6">
+                                        <label class="form-label text-sm text-uppercase" for="firstName">Nama Pelanggan </label>
+                                        <input class="form-control form-control-lg" type="text" id="firstName" name="nama_pelanggan" value="<?= $value->nama2 ?>" placeholder="Enter your first name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label text-sm text-uppercase" for="phone">No Telephone </label>
+                                        <input class="form-control form-control-lg" type="tel" id="phone" name="no_tlpn" value="<?= $value->no_tlpn2 ?>" placeholder="e.g. +02 245354745">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label text-sm text-uppercase" for="company">Kode Post </label>
+                                        <input class="form-control form-control-lg" type="text" id="company" name="kode_pos" value="<?= $value->kode_post2 ?>" placeholder="Your company name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label text-sm text-uppercase" for="company">Alamat Lengkap </label>
+                                        <input class="form-control form-control-lg" type="text" id="company" name="alamat" value="<?= $value->alamat2 ?>" placeholder="Your company name">
+                                    </div>
+                                <?php } ?>
+                                <br>
+                                <br>
+                                <h5>EXPEDISI</h5>
                                 <div class="col-lg-6 form-group">
                                     <label class="form-label text-sm text-uppercase" for="country">Provinsi</label>
                                     <select class="form-control" id="country" name="provinsi" data-customclass="form-control form-control-lg rounded-0">
@@ -202,6 +235,7 @@
                             </div>
                         </form>
                     </div>
+
                     <!-- ORDER SUMMARY-->
                     <div class="col-lg-4">
                         <div class="card border-0 rounded-0 p-lg-4 bg-light">
